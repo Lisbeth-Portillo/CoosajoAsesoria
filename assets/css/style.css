@@ -1,0 +1,56 @@
+/*Menu sidebar*/
+
+[class*='sidebar-dark-'] {
+    background-color: #073763;
+}
+
+
+/*Contenedor dentro del menú sidebar*/
+
+.layout-navbar-fixed .wrapper .sidebar-dark-success .brand-link:not([class*="navbar"]) {
+    background-color: inherit;
+}
+
+
+/*Cambiando el valor del color establecido en esta clase*/
+
+.navbar-light-blue {
+    background-color: #ffffff;
+}
+
+
+/*verde utilizado por micoope*/
+
+.verde-micoope {
+    background: #28a745;
+}
+
+
+/*
+  iconos con color dinamico, si el usuario selecciona "si"
+  el icono correspondiente sera de color verde; si el usuario
+  selecciona "no", el icono sera de color rojo
+
+  */
+
+.si_no_icons {
+    margin-top: ;
+}
+
+.si_no_icons .resp_si,
+.si_no_icons .resp_no {
+    display: none;
+}
+
+.si_no_icons label i {
+    color: #dddddd;
+    font-size: 1.3em;
+}
+
+.resp_si:checked+label i {
+    color: green;
+}
+
+.resp_no:checked+label i {
+    color: red;
+}
