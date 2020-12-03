@@ -8,6 +8,8 @@
   <script src="../../assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
   <!-- AdminLTE App -->
   <script src="../../assets/js/adminlte.js"></script>
+  <!-- App functions -->
+  <script src="../../assets/js/functions.js"></script>
 
   <!-- OPTIONAL SCRIPTS -->
   <script src="../../assets/js/demo.js"></script>
@@ -23,4 +25,3 @@
 
   <!-- PAGE SCRIPTS -->
   <script src="../../assets/js/pages/dashboard2.js"></script>
-  <script src="../../assets/js/funciones.js"></script>
