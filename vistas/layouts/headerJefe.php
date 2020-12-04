@@ -52,7 +52,7 @@
       <a href="../asociado/asociado.php" class="brand-link">
         <img src="../../assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
           style="opacity: .8">
-        <span class="brand-text font-weight-light text-light">Asociado</span>
+        <span class="brand-text font-weight-light text-light">Jefe Cedec</span>
       </a>
 
       <!-- Sidebar -->
@@ -68,9 +68,27 @@
             <!--Menú desplegable documentos -->
             <li class="nav-item has-treeview menu-open">
               <a href="../" class="nav-link active">
-                <i class="nav-icon fas fa-file"></i>
+                <i class="nav-icon fas fa-users"></i>
                 <p>
-                  Documentos
+                  Usuarios
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item has-treeview menu-open">
+              <a href="../" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
+                <p>
+                  Servicios/Programas
+                </p>
+              </a>
+            </li>
+
+            <li class="nav-item has-treeview menu-open">
+              <a href="../" class="nav-link">
+              <i class="nav-icon fas fa-file-medical-alt"></i>
+                <p>
+                  Informes
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
@@ -78,19 +96,19 @@
                 <li class="nav-item">
                   <a href="../asociado/index.php" class="nav-link active">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Línea Base</p>
+                    <p>Asesorías</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="../asociado/carta.php" class="nav-link">
+                  <a href="../asociado/index.php" class="nav-link active">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Carta de compromiso</p>
+                    <p>Microcréditos</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="../asociado/diagnostico.php" class="nav-link">
+                  <a href="../asociado/index.php" class="nav-link active">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Diagnóstico del negocio</p>
+                    <p>Formación</p>
                   </a>
                 </li>
               </ul>
@@ -100,7 +118,7 @@
               <a href="#" class="nav-link">
                 <i class="nav-icon far fa-chart-bar"></i>
                 <p>
-                  Resultados
+                  Informe General
                 </p>
               </a>
             </li>
