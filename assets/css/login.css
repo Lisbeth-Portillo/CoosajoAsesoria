@@ -80,3 +80,8 @@ input[type="password"] {
 .form-control-lg:focus {
     outline: none;
 }
+
+.alert {
+    color: red;
+    text-align: center;
+}
