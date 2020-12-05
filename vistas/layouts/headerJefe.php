@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
@@ -67,7 +67,7 @@
 
             <!--Menú desplegable documentos -->
             <li class="nav-item has-treeview menu-open">
-              <a href="../" class="nav-link active">
+              <a href="nuevosusuarios.php" class="nav-link active">
                 <i class="nav-icon fas fa-users"></i>
                 <p>
                   Usuarios

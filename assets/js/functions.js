@@ -1,3 +1,9 @@
+
+
+$("input[name=total_empleados]").click(function(){
+    alert("hola mundo");
+})
+
 /*************************CARTA ASOCIADO/*************************/
 $(".carta .firma #texto_firma").keyup(function(){
     let input = $(this)

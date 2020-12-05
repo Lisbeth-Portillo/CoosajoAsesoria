@@ -27,9 +27,9 @@ require '../layouts/header.php';
                 <div class="col-md-12">
                     <div class="card card card-primary">
 
-                        <div class="card-body m-0 p-3 text-justify carta">
+                        <div class=" card-body m-0 m-sm-2 m-md-3 m-lg-5 p-3 text-justify carta">
 
-                            <section class="lugar_fecha">
+                            <section class="lugar_fecha mt-2 mt-lg-0">
                                 <p class="text-right">
                                     Esquipulas, mes año
                                 </p>
@@ -79,8 +79,8 @@ require '../layouts/header.php';
                                     certifico que he comprendido la información precedente y me comprometo a cumplir con los requisitos del beneficio propuesto.
                                 </p>
                             </section>
-                            <button class="btn btn-primary tocame">Tócame</button>
-                            <br><br>
+                            <br>
+                            <br>
                             <p class="text-center">____________________________________________________</p>
                             <p class="text-center">Nombre asociado
                                 <br><br>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -21,8 +21,10 @@
             <a class="button2" href="vistas/auth/login.php">Iniciar sesión</a>
         </center>
     </div>
-    <br><br>
-    <br><br>
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
     <footer>
         <center>

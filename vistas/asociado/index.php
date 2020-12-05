@@ -553,8 +553,7 @@ require '../layouts/header.php';
                       </div>
                       <div class="col-6 col-md-6">
                         <div class="input-group flex-nowrap">
-
-                          <input name="emp_hombres_14_24" type="number" class="form-control" placeholder="0">
+                          <input name="total_empleados" type="number" class="form-control bg-white" placeholder="0" disabled>
                         </div>
                       </div>
 
@@ -579,12 +578,12 @@ require '../layouts/header.php';
 
                     <div>
                       <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="genero" name="genero" class="custom-control-input">
-                        <label class="custom-control-label font-weight-normal" for="genero">Si</label>
+                        <input type="radio" id="ud_brinda_r_si" name="genero" class="custom-control-input">
+                        <label class="custom-control-label font-weight-normal" for="ud_brinda_r_si">Si</label>
                       </div>
                       <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="genero2" name="genero" class="custom-control-input">
-                        <label class="custom-control-label font-weight-normal" for="genero2">No</label>
+                        <input type="radio" id="ud_brinda_r_no" name="genero" class="custom-control-input">
+                        <label class="custom-control-label font-weight-normal" for="ud_brinda_r_no">No</label>
                       </div>
                     </div>
 
