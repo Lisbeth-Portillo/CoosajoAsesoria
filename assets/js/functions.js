@@ -21,7 +21,13 @@ ultimostresanios();
 
 
 
-
+$(".check_otros").click(function(){
+    if( $('#invertidochekc6').prop('checked') ) {
+        $(".detalle_otros").css({"transform" : "scale(1)", "display" : "block"})
+    }else{
+        $(".detalle_otros").css({"transform" : "scale(0.5)", "display" : "none"})  
+    }
+})
 
 
 /* $("input[name=total_empleados]").click(function(){

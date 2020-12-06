@@ -61,6 +61,8 @@
 /*Ocultar mostrar campo detalle_otros automaticamente*/
 .detalle_otros{
     display: none;
+    transform: scale(0);
+    transition: transform 100ms ease;
 }
 
 

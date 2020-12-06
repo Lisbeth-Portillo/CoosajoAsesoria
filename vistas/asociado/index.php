@@ -447,7 +447,7 @@ require '../layouts/header.php';
                     <div class="alert alert-primary mt-3 py-1" role="alert">
                       ¿En qué ha invertido su empresa en los útimos 3 años?
                     </div>
-                    <div class="row">
+                    <div class="row invertido_opciones">
                       <div class="col-sm-6">
                         <!-- checkbox -->
                         <div class="form-group">
@@ -477,10 +477,15 @@ require '../layouts/header.php';
                             <input class="form-check-input" type="checkbox" id="invertidochekc5" name=invertido_ultimos3anios[] value="5">
                             <label class="form-check-label" for="invertidochekc5">Nuevas Tecnologías</label>
                           </div>
-                          <div class="form-check mb-1">
+                          <div class="form-check mb-1 check_otros">
                             <input class="form-check-input" type="checkbox" id="invertidochekc6" name=invertido_ultimos3anios[] value="6">
                             <label class="form-check-label" for="invertidochekc6">Otros</label>
                           </div>
+                        </div>
+                      </div>
+                      <div class="col-12 detalle_otros">
+                        <div class="form-group">
+                          <textarea class="form-control" name="tipo_capacitación" id="tipo_capacitación" rows="3" placeholder="Ingrese una respuesta"></textarea>
                         </div>
                       </div>
 
