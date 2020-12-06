@@ -25,6 +25,9 @@
 }
 
 
+
+
+/***************************************LINEA BASE ASOCIADO/***************************************/
 /*
   iconos con color dinamico, si el usuario selecciona "si"
   el icono correspondiente sera de color verde; si el usuario
@@ -33,7 +36,7 @@
   */
 
 .si_no_icons {
-    margin-top: ;
+    /*margin-top: ;*/
 }
 
 .si_no_icons .resp_si,
@@ -55,12 +58,23 @@
 }
 
 
+/*Ocultar mostrar campo detalle_otros automaticamente*/
+.detalle_otros{
+    display: none;
+}
+
+
+
+/*************************************************************************************************/
+
+
+
+
+
 
 /***********************CARTA ASOCIADO/***********************/
+
 /*Firma de texto editable*/
-
-
-
 .carta .firma p{
     display: inline;
 }
