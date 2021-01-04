@@ -1,3 +1,6 @@
+
+/***************************************ESTILOS GENERALES******************************************/
+
 /*Menu sidebar*/
 
 [class*='sidebar-dark-'] {
@@ -15,7 +18,7 @@
 /*Cambiando el valor del color establecido en esta clase*/
 
 .navbar-light-blue {
-    background-color: #ffffff;
+    background-color: #ffffff; /*Exacto, blanco :V*/
 }
 
 /*verde utilizado por micoope*/
@@ -24,6 +27,37 @@
     background: #28a745;
 }
 
+
+.card-header > .card-tools {
+    position: absolute;
+    z-index: 999999;
+    right: 0.8em;
+    top: 0.5em;
+}
+
+/*texto no seleccionable*/
+.not_selectable {
+    -moz-user-select: none; 
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+ }
+
+ /*elementos sin outline en estado active*/
+
+
+ .form-control:focus{
+    box-shadow: none !important;
+    border: 2px solid #e6e6e6;
+
+  }
+
+
+  .verde_asesor{
+      background-color: #1AB521 !important;
+  }
+
+/**************************************************************************************************/
 
 
 
@@ -35,9 +69,6 @@
 
   */
 
-.si_no_icons {
-    /*margin-top: ;*/
-}
 
 .si_no_icons .resp_si,
 .si_no_icons .resp_no {
@@ -100,3 +131,11 @@
 }
 
 /************************************************************/
+
+
+
+/*************************BUSCAR EMPRESA****************************/
+
+
+
+/*******************************************************************/

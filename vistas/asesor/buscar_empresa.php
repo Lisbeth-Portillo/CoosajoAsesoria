@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="../../assets/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+
     <!-- daterange picker -->
     <link rel="stylesheet" href="../../assets/plugins/daterangepicker/daterangepicker.css">
     <!-- iCheck for checkboxes and radio inputs -->
@@ -38,7 +41,6 @@
 
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -52,6 +54,33 @@
                     <!-- otro link -->
                 </li>
             </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <!-- User options -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        Ludy López
+                        <i class="fas fa-angle-down"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <span class="dropdown-item dropdown-header">Opciones de cuenta</span>
+
+                        <div class="dropdown-divider"></div> 
+
+                        <a href="#" class="dropdown-item">
+                            Configurar
+                        </a>
+
+
+
+                        <div class="dropdown-divider"></div>
+                        <a href="../auth/salir.php" class="dropdown-item dropdown-footer">Cerrar sesion</a>
+                    </div>
+                </li>
+            </ul>
+
+
+
         </nav>
         <!-- /.navbar -->
 
@@ -75,7 +104,7 @@
 
                         <!--Menú desplegable documentos -->
                         <li class="nav-item has-treeview">
-                            <a href="agendasesor.php" class="nav-link">
+                            <a href="agenda.php" class="nav-link">
                                 <i class="nav-icon fas fa-calendar-alt"></i>
                                 <p>
                                     Agenda
@@ -85,7 +114,7 @@
                         <li class="nav-item menu-open">
                             <a href="../asociado/carta.php" class="nav-link active">
                                 <i class="nav-icon fas fa-handshake"></i>
-                                <p>Asesoria
+                                <p>Asesorias
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
@@ -93,13 +122,13 @@
                                 <li class="nav-item">
                                     <a href="lista_asesorias.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Lista de asesorias</p>
+                                        <p>Lista de asesorías</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="buscar_empresa.php" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Detalle empresa</p>
+                                        <p>Detalles de una empresa</p>
                                     </a>
                                 </li>
                             </ul>
@@ -143,23 +172,26 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <div class="content-header">
+            <section class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-12">
-                            <h1 class="text-dark ml-1 ml-lg-0">Buscar empresa</h1>
+                            <h1 class="text-dark ml-1 ml-lg-0">Detalles de una empresa</h1>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
-            </div>
+            </section>
             <!-- /.content-header -->
 
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-                    <!-- SELECT2 EXAMPLE -->
 
                     <div class="card card-default">
+
+                        <div class="card-header">
+                            <h3 class="card-title">Seleccione una empresa</h3>
+                        </div>
 
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -169,7 +201,7 @@
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" id="gridCheck" checked>
                                             <label class="form-check-label not_selectable" for="gridCheck">
-                                                 Filtrar por asociado
+                                                Filtrar por asociado
                                             </label>
                                         </div>
                                     </div>
@@ -229,6 +261,60 @@
                                             </tr>
                                         </tbody>
                                     </table>
+
+                                    <!-- table id="tablaempresas" class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>Codigo</th>
+                                                <th>Nombre empresa</th>
+                                                <th>Opciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td data-th="Codigo" id="idlibro">1</td>
+                                                <td data-th="Ejemplares">Pollo Expre</td>
+                                                <td>
+                                                    <a class="btn btn-info btn-sm text-white">Ver detalles</a>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-th="Codigo" id="idlibro">2</td>
+                                                <td data-th="Ejemplares">Empresa de </td>
+                                                <td>
+                                                    <a class="btn btn-info btn-sm text-white">Ver detalles</a>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-th="Codigo" id="idlibro">3</td>
+                                                <td data-th="Ejemplares">Otra empres</td>
+                                                <td>
+                                                    <a class="btn btn-info btn-sm text-white">Ver detalles</a>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-th="Codigo" id="idlibro">7</td>
+                                                <td data-th="Ejemplares">Venonzalia</td>
+                                                <td>
+                                                    <a class="btn btn-info btn-sm text-white">Ver detalles</a>
+
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td data-th="Codigo" id="idlibro">8</td>
+                                                <td data-th="Ejemplares">Distribuidora S-A</td>
+                                                <td>
+                                                    <a class="btn btn-info btn-sm text-white">Ver detalles</a>
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+
+                                    </table> -->
                                 </div>
                                 <!-- /.col -->
                             </div>
@@ -281,6 +367,11 @@
         <script src="../../assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
         <!-- AdminLTE App -->
         <script src="../../assets/js/adminlte.min.js"></script>
+        <!-- DataTables -->
+        <script src="../../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="../../assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+        <script src="../../assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+
         <!-- AdminLTE for demo purposes -->
         <script src="../../assets/js/demo.js"></script>
         <script src="../../assets/js/functions.js"></script>
@@ -296,8 +387,19 @@
                 })
 
             })
-        </script>
 
+            $(function() {
+                $('#tablaempresas').DataTable({
+                    "paging": true,
+                    "lengthChange": false,
+                    "searching": true,
+                    "ordering": true,
+                    "info": true,
+                    "autoWidth": false,
+                    "responsive": true,
+                });
+            });
+        </script>
 
 </body>
 
