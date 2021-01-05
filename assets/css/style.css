@@ -53,9 +53,18 @@
   }
 
 
-  .verde_asesor{
-      background-color: #1AB521 !important;
+  .verde-asesor{
+      background-color: #3ca03c !important;
   }
+  .verde-asesor .nav-pills .nav-link {
+    color: #ffffff !important;
+}
+
+
+.icon_centrado{
+    vertical-align: -.1em;
+}
+
 
 /**************************************************************************************************/
 
