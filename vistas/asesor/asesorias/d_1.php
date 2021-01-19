@@ -20,6 +20,8 @@
    <link rel="stylesheet" href="../../../assets/css/adminlte.min.css">
    <!-- Google Font: Source Sans Pro -->
    <link rel="stylesheet" href="../../../assets/css/style.css">
+   <!-- Boton estilo ios  -->
+   <link rel="stylesheet" href="../../../assets/css/btn_ios.css">
    <!-- Google Font: Source Sans Pro -->
    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -187,23 +189,23 @@
                      <div class="col-md-6">
                         <div class="card-body">
                            <div class="form-group">
-                              <label for="codigo" class="font-weight-normal">Código</label>
-                              <input type="number" class="form-control" id="codigo">
+                              <label for="codigo">Código</label>
+                              <input type="number" class="form-control bg-white bg-white" value="0202020" readonly id="codigo">
                            </div>
                            <!-- /.form-group -->
                            <div class="form-group">
-                              <label for="propietario" class="font-weight-normal">Propietario</label>
-                              <input type="text" class="form-control" id="propietario">
+                              <label for="propietario">Propietario</label>
+                              <input type="text" class="form-control bg-white" value="Byron Alexander García Cruz" readonly id="propietario">
                            </div>
                            <!-- /.form-group -->
                            <div class="form-group">
-                              <label for="telefono" class="font-weight-normal">Teléfono</label>
-                              <input type="text" class="form-control" id="telefono">
+                              <label for="telefono">Teléfono</label>
+                              <input type="text" class="form-control bg-white" value="+50251903632" readonly id="telefono">
                            </div>
                            <!-- /.form-group -->
                            <div class="form-group">
-                              <label for="Edad" class="font-weight-normal">Edad</label>
-                              <input type="number" class="form-control" id="edad">
+                              <label for="Edad">Edad</label>
+                              <input type="number" class="form-control bg-white" value="15" readonly id="edad">
                            </div>
                            <!-- /.form-group -->
                         </div>
@@ -212,23 +214,57 @@
                      <div class="col-md-6">
                         <div class="card-body">
                            <div class="form-group">
-                              <label for="sector" class="font-weight-normal">Sector</label>
-                              <input type="number" class="form-control" id="sector">
+                              <label for="sector">Sector</label>
+                              <input type="number" class="form-control bg-white" value="Agrícola" readonly id="sector">
+                           </div>
+                           <!-- /.form-group -->
+                           <div class="d-block mb-3">
+                              <label for="empleados">Empleados</label>
+                              <div class="row not_selectable">
+                                 <div class="col-lg-6 mb-3 mb-lg-0">
+                                    <div class="d-flex align-items-center">
+                                       <div class="input-group">
+                                          <div class="input-group-prepend">
+                                             <span class="input-group-text" id="basic-addon1">
+                                                <i class="fas fa-female"></i>
+                                             </span>
+                                          </div>
+                                          <input type="number" class="form-control input_toggle_female" placeholder="F" aria-label="Cantidad">
+                                       </div>
+                                       <div class="ml-2 my-0 py-0">
+                                          <input type="checkbox" id="toggle_femenino" class="toggle-btn">
+                                          <label class="m-0"></label>
+                                       </div>
+                                    </div>
+
+                                 </div>
+                                 <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                       <div class="input-group">
+                                          <div class="input-group-prepend">
+                                             <span class="input-group-text" id="basic-addon1">
+                                                <i class="fas fa-male"></i>
+                                             </span>
+                                          </div>
+                                          <input type="number" class="form-control" placeholder="M" aria-label="Cantidad">
+                                       </div>
+                                       <div class="ml-2 my-0 py-0">
+                                          <input type="checkbox" id="toggle_masculino" class="toggle-btn">
+                                          <label class="m-0"></label>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
                            </div>
                            <!-- /.form-group -->
                            <div class="form-group">
-                              <label for="empleados" class="font-weight-normal">Empleados</label>
-                              <input type="number" class="form-control" id="empleados">
+                              <label for="promedio_ventas_anuales">Email address</label>
+                              <input type="number" class="form-control bg-white" value="0202020" readonly id="promedio_ventas_anuales">
                            </div>
                            <!-- /.form-group -->
                            <div class="form-group">
-                              <label for="promedio_ventas_anuales" class="font-weight-normal">Email address</label>
-                              <input type="number" class="form-control" id="promedio_ventas_anuales">
-                           </div>
-                           <!-- /.form-group -->
-                           <div class="form-group">
-                              <label for="sesiones_atencion" class="font-weight-normal">Sesiones de atención</label>
-                              <input type="number" class="form-control" id="sesiones_atencion">
+                              <label for="sesiones_atencion">Sesiones de atención</label>
+                              <input type="number" class="form-control bg-white" value="0202020" readonly id="sesiones_atencion">
                            </div>
                            <!-- /.form-group -->
                         </div>

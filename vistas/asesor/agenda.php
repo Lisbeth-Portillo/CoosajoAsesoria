@@ -189,9 +189,10 @@
                             </div>
                             <!-- /.row 1 campo fecha -->
                             <div class="row mt-1">
-                                <div class="col-lg-8">
+                                <div class="col-md-12 col-xl-8">
                                     <div class="row px-0">
                                         <div class="col-12">
+                                        <div class="table-responsive">
                                             <table class="table table-borderless">
                                                 <thead>
                                                     <h4 class="pt-3 pb-2 text-center mt-4">Asesorias</h4>
@@ -249,7 +250,9 @@
                                                 </tbody>
                                             </table>
                                         </div>
+                                        </div>
                                         <div class="col-12">
+                                        <div class="table-responsive">
                                             <table class="table table-borderless">
                                                 <thead>
                                                     <h4 class="py-2 text-center">Microcreditos</h4>
@@ -307,15 +310,16 @@
                                                 </tbody>
                                             </table>
                                         </div>
+                                        </div>
                                     </div>
-
                                 </div>
                                 <!-- /.col-md-7 -->
-                                <div class="col-lg-4">
+                                <div class="col-md-12 col-xl-4">
                                     <!-- FORMACIONES -->
                                     <h4 class="pt-1 pb-2 text-center">Formaciones</h4>
-                                    <div class="">
-                                        <div class="eventos_de_hoy mb-4">
+                                    <div class="row">
+                                        <div class="eventos_de_hoy mb-4 col-md-6 col-lg-12">
+                                        <div class="table-responsive">
                                             <table class="table table-borderless">
                                                 <thead>
                                                     <tr>
@@ -328,6 +332,8 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+            
+
                                                     <tr>
                                                         <td>
                                                             <input type="text" class="form-control bg-white" value="Nombre evento" readonly>
@@ -374,6 +380,7 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
+                                        </div>
                                             <button type="button" class="btn btn-info btn-sm ml-2">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon_centrado bi bi-caret-left-fill" viewBox="0 0 16 16">
                                                     <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"></path>
@@ -381,7 +388,8 @@
                                                 Detalles de eventos
                                             </button>
                                         </div>
-                                        <div class="eventos_proximos mt-5">
+                                        <div class="eventos_proximos mt-5 col-md-6 col-lg-12">
+                                        <div class="table-responsive">
                                             <table class="table table-borderless">
                                                 <thead>
                                                     <tr>
@@ -408,11 +416,10 @@
                                                 </tbody>
                                             </table>
                                         </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- /.col-md-7 -->
-
-
                             </div>
                             <!-- /.row 2 asesoria->microcreditos y formaciones -->
 

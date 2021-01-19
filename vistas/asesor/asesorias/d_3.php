@@ -182,9 +182,9 @@
             <div class="container-fluid">
                <div class="row ">
                   <div class="col-md-12">
-                     <div class="card card-success">
+                     <div class="card card-info">
                         <div class="card-header">
-                           <h3 class="card-title">Datos del empresario</h3>
+                           <h3 class="card-title float-none text-center">Datos del empresario</h3>
                            <div class="card-tools">
                               <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
                            </div>
@@ -195,7 +195,7 @@
 
                               <!-- PRIMER TARJETA -->
                               <div class="col-sm-6 col-12">
-                                 <div class="card card-info">
+                                 <div class="card card-primary-light">
                                     <div class="card-header">
                                        <h3 class="card-title">Datos personales</h3>
 
@@ -302,7 +302,7 @@
                                  </div>
                                  <!-- /.primer card -->
 
-                                 <div class="card card-danger">
+                                 <div class="card card-primary-light">
                                     <div class="card-header">
                                        <h3 class="card-title">Situación actual en términos de empleo</h3>
 
@@ -378,7 +378,7 @@
 
                               <!-- SEGUNDA COLUMNA -->
                               <div class="col-sm-6 col-12">
-                                 <div class="card card-warning">
+                                 <div class="card card-primary-light">
                                     <div class="card-header">
                                        <h3 class="card-title">Nivel de ingresos familiares mensuales</h3>
 
@@ -480,7 +480,7 @@
                   <!-- /.col datos de empresario -->
 
                   <div class="col-md-12 empresas">
-                     <div class="formulario_empresa card card-success">
+                     <div class="formulario_empresa card card-info">
                         <div class="card-header">
                            <h3 class="card-title">Información general de la empresa</h3>
                            <div class="card-tools">
@@ -775,7 +775,7 @@
                         </div>
                         <!-- ./card-body -->
                      </div>
-                     <div class="card card-success">
+                     <div class="card card-info">
                         <div class="card-header">
                            <h3 class="card-title">Condiciones Laborales</h3>
                            <div class="card-tools">

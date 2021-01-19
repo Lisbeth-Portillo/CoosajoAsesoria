@@ -206,8 +206,9 @@
                           <td class="text-center">40%</td>
                           <td class="text-center">
                             <div class="btn-group">
-                              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Consultar
+                              <a href="asesorias/d_1.php" class="btn btn-danger pr-0">Consultar</a>
+                              <button type="button" class="btn btn-danger dropdown-toggle pl-1 pr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
                               </button>
                               <div class="dropdown-menu">
                                 <a class="dropdown-item" href="asesorias/d_1.php">Detalle por empresa</a>
@@ -233,8 +234,9 @@
                           <td class="text-center">60%</td>
                           <td class="text-center">
                             <div class="btn-group">
-                              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Consultar
+                              <a href="asesorias/d_1.php" class="btn btn-danger pr-0">Consultar</a>
+                              <button type="button" class="btn btn-danger dropdown-toggle pl-1 pr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
                               </button>
                               <div class="dropdown-menu">
                                 <a class="dropdown-item" href="asesorias/d_1.php">Detalle por empresa</a>
@@ -260,8 +262,9 @@
                           <td class="text-center">10%</td>
                           <td class="text-center">
                             <div class="btn-group">
-                              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Consultar
+                              <a href="asesorias/d_1.php" class="btn btn-danger pr-0">Consultar</a>
+                              <button type="button" class="btn btn-danger dropdown-toggle pl-1 pr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
                               </button>
                               <div class="dropdown-menu">
                                 <a class="dropdown-item" href="asesorias/d_1.php">Detalle por empresa</a>
@@ -287,8 +290,9 @@
                           <td class="text-center">90%</td>
                           <td class="text-center">
                             <div class="btn-group">
-                              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Consultar
+                              <a href="asesorias/d_1.php" class="btn btn-danger pr-0">Consultar</a>
+                              <button type="button" class="btn btn-danger dropdown-toggle pl-1 pr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
                               </button>
                               <div class="dropdown-menu">
                                 <a class="dropdown-item" href="asesorias/d_1.php">Detalle por empresa</a>
@@ -314,8 +318,9 @@
                           <td class="text-center">100%</td>
                           <td class="text-center">
                             <div class="btn-group">
-                              <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Consultar
+                              <a href="asesorias/d_1.php" class="btn btn-danger pr-0">Consultar</a>
+                              <button type="button" class="btn btn-danger dropdown-toggle pl-1 pr-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
                               </button>
                               <div class="dropdown-menu">
                                 <a class="dropdown-item" href="asesorias/d_1.php">Detalle por empresa</a>

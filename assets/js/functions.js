@@ -77,12 +77,10 @@ $(".empresas").on("keyup", "input[name=nombreempresa]", function(){
 /**PETICIONES AJAX */
 
 $("#nueva_empresa_btn").click(function(){
-
     $.ajax({
         type: "GET",
         url: "../layouts/formulario_empresa.php",
         success: function (res) {
-            $(".s_loader").remove()
             $(".empresas").append(res);
             
         }
@@ -108,6 +106,8 @@ $("#nueva_empresa_btn").click(function(){
 
 
 
+
+
 $(".select_asociado").change(function(){
     var id = $(this).val();
 
@@ -118,19 +118,6 @@ $(".select_asociado").change(function(){
             url: "includes/empresas_de_asociado.php",
             success: function (res) {
                 $(".empresas_de_asociado").html(res);
-                
-                $(function() {
-                    $('#tablaempresas').DataTable({
-                        "paging": true,
-                        "lengthChange": false,
-                        "searching": true,
-                        "ordering": true,
-                        "info": true,
-                        "autoWidth": false,
-                        "responsive": true,
-                        "lenguage" : "es"
-                    });
-                });
             }
         });
     }else{
@@ -138,3 +125,20 @@ $(".select_asociado").change(function(){
     }
     
 })
+
+
+
+
+/*************************Detalle 1 Asesorias/*************************/
+$(".input_toggle_female").keyup(function(){
+    let valor = $(this).val();
+
+    if(Number(valor) > 0){
+        $("#toggle_femenino").prop("checked",true);
+    }else{
+        $("#toggle_femenino").prop("checked",false);
+    }
+    
+})
+
+/**********************************************************************/

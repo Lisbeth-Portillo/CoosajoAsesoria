@@ -181,56 +181,105 @@
          <section class="content">
             <div class="container-fluid">
 
-            <div class="card card-default">
+               <div class="card card-default">
                   <div class="card-body">
-                     <div class="row mt-4">
-                        <div class="col-md-6">
-                           <div class="form-group row">
-                              <label for="Propietario" class="col-sm-3 col-form-label">Propietario(a)</label>
-                              <div class="col-sm-9">
-                                 <input type="text" class="form-control" id="Propietario" placeholder="Nombre completo">
-                              </div>
-                           </div>
-                           <div class="form-group row">
-                              <label for="negocio" class="col-sm-3 col-form-label">Negocio/Empresa</label>
-                              <div class="col-sm-9">
-                                 <input type="text" class="form-control" id="negocio" placeholder="Nombre de empresa">
-                              </div>
-                           </div>
-                           <div class="form-group row">
-                              <label for="ubicacion" class="col-sm-3 col-form-label">Ubicación</label>
-                              <div class="col-sm-9">
-                                 <input type="text" class="form-control" id="ubicacion" placeholder="ej. Col. San Mateo 2, primera entrada">
-                              </div>
-                           </div>
+                     <div class="card card-info mt-3">
+                        <div class="card-header">
+                           <h5 class="card-title">Bitácora Sesión</h5>
                         </div>
-                        <div class="col-md-6">
-                           <div class="form-group row">
-                              <label for="codigo" class="col-sm-3 col-form-label">Código</label>
-                              <div class="col-sm-9">
-                                 <input type="text" class="form-control" id="Propietario" placeholder="02020">
+                        <div class="card-body">
+                           <p class="text-muted text-center">Bitácora Trabajo Administrativo</p>
+                           <div class="row p-1 pr-1 mt-3">
+                              <div class="col-md-6">
+                                 <div class="form-group row">
+                                    <label for="Propietario" class="col-sm-3 col-form-label">Propietario(a)</label>
+                                    <div class="col-sm-9">
+                                       <input type="text" class="form-control" id="Propietario" placeholder="Nombre completo">
+                                    </div>
+                                 </div>
+                                 <div class="form-group row">
+                                    <label for="negocio" class="col-sm-3 col-form-label">Negocio/Empresa</label>
+                                    <div class="col-sm-9">
+                                       <input type="text" class="form-control" id="negocio" placeholder="Nombre de empresa">
+                                    </div>
+                                 </div>
+                                 <div class="form-group row">
+                                    <label for="ubicacion" class="col-sm-3 col-form-label">Ubicación</label>
+                                    <div class="col-sm-9">
+                                       <input type="text" class="form-control" id="ubicacion" placeholder="ej. Col. San Mateo 2, primera entrada">
+                                    </div>
+                                 </div>
                               </div>
-                           </div>
-                           <div class="form-group row">
-                              <label for="negocio" class="col-sm-3 col-form-label">Contacto</label>
-                              <div class="col-sm-9">
-                                 <input type="text" class="form-control" id="negocio" placeholder="+502 0000 0000">
+                              <div class="col-md-6">
+                                 <div class="form-group row">
+                                    <label for="codigo" class="col-sm-3 col-form-label">Código</label>
+                                    <div class="col-sm-9">
+                                       <input type="text" class="form-control" id="Propietario" placeholder="02020">
+                                    </div>
+                                 </div>
+                                 <div class="form-group row">
+                                    <label for="negocio" class="col-sm-3 col-form-label">Contacto</label>
+                                    <div class="col-sm-9">
+                                       <input type="text" class="form-control" id="negocio" placeholder="+502 0000 0000">
+                                    </div>
+                                 </div>
+                                 <div class="form-group row">
+                                    <label for="ubicacion" class="col-sm-3 col-form-label">Asesor Asignado</label>
+                                    <div class="col-sm-9 not_selectable">
+                                       <input type="text" class="form-control bg-white" id="ubicacion" value="Ludy López" readonly>
+                                    </div>
+                                 </div>
                               </div>
-                           </div>
-                           <div class="form-group row">
-                              <label for="ubicacion" class="col-sm-3 col-form-label">Asesor Asignado</label>
-                              <div class="col-sm-9">
-                                 <input type="text" class="form-control" id="ubicacion">
-                              </div>
-                           </div>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-12">
-                           
-                        </div>
+                              <!-- /.col -->
 
+                              <!-- /.col -->
+
+                           </div>
+                           <!-- /.row -->
+
+
+                        </div>
                      </div>
-                     <!-- /.row -->
+
+
+
+                     <div class="table-responsive mt-5">
+                        <table class="table table-bordered text-center">
+                           <thead>
+                              <tr class="table-info">
+                                 <th scope="col">Fecha</th>
+                                 <th scope="col" colspan="3">Tema</th>
+                                 <th scope="col" colspan="2">Hora de inicio</th>
+                                 <th scope="col" colspan="2">Hora final</th>
+                                 <th>Firma asociado</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td>21-09-2020</td>
+                                 <td colspan="3">Texto</td>
+                                 <td colspan="2">08:05 am</td>
+                                 <td colspan="2">11:25 am</td>
+                                 <td></td>
+                              </tr>
+                              <tr>
+                                 <td>21-09-2020</td>
+                                 <td colspan="3">Texto</td>
+                                 <td colspan="2">08:05 am</td>
+                                 <td colspan="2">11:25 am</td>
+                                 <td></td>
+                              </tr>
+                              <tr>
+                                 <td>21-09-2020</td>
+                                 <td colspan="3">Texto</td>
+                                 <td colspan="2">08:05 am</td>
+                                 <td colspan="2">11:25 am</td>
+                                 <td></td>
+                              </tr>
+                              
+                           </tbody>
+                        </table>
+                     </div>
                   </div>
                   <!-- /.card-body -->
                </div>

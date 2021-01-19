@@ -7,6 +7,8 @@
    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
    <title>CEDEC</title>
+   <!-- Font Awesome -->
+   <link rel="stylesheet" href="../../../assets/plugins/fontawesome-free/css/all.min.css">
    <!-- Ionicons -->
    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
    <!-- DataTables -->
@@ -178,87 +180,457 @@
          <!-- Main content -->
          <section class="content">
             <div class="container-fluid">
-
                <div class="card card-default">
-                  <div class="card-body">
-                     <div class="row mt-4">
-                        <div class="col-md-6">
-                           <div class="form-group row">
-                              <label for="Propietario" class="col-sm-3 col-form-label">Propietario(a)</label>
-                              <div class="col-sm-9">
-                                 <input type="text" class="form-control" id="Propietario" placeholder="Nombre completo">
+                  <div class="card-body mt-2">
+                     <!-- Button trigger modal -->
+                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalbitacora">
+                        Nueva bitácora
+                     </button>
+
+                     <!-- Modal -->
+                     <div class="modal fade" id="modalbitacora" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+                           <div class="modal-content">
+                              <div class="modal-header">
+                                 <h5 class="modal-title" id="exampleModalLabel">Nueva Bitácora</h5>
+                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                 </button>
                               </div>
-                           </div>
-                           <div class="form-group row">
-                              <label for="negocio" class="col-sm-3 col-form-label">Negocio/Empresa</label>
-                              <div class="col-sm-9">
-                                 <input type="text" class="form-control" id="negocio" placeholder="Nombre de empresa">
+                              <div class="modal-body">
+                                 <div class="row">
+                                    <div class="col-md-6">
+                                       <div class="form-group row">
+                                          <label for="Propietario" class="col-lg-3 col-form-label">Propietario</label>
+                                          <div class="col-lg-9">
+                                             <input type="text" class="form-control" id="Propietario" placeholder="Nombre completo" title="Dueño(a) del negocio">
+                                          </div>
+                                       </div>
+                                       <div class="form-group row">
+                                          <label for="negocio" class="col-lg-3 col-form-label">Empresa</label>
+                                          <div class="col-lg-9">
+                                             <input type="text" class="form-control" id="negocio" placeholder="Nombre de empresa" title="Empresa/Negocio">
+                                          </div>
+                                       </div>
+                                       <div class="form-group row">
+                                          <label for="ubicacion" class="col-lg-3 col-form-label">Ubicación</label>
+                                          <div class="col-lg-9">
+                                             <input type="text" class="form-control" id="ubicacion" placeholder="ej. Col. San Mateo 2, primera entrada">
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                       <div class="form-group row">
+                                          <label for="codigo" class="col-lg-3 col-form-label">Código</label>
+                                          <div class="col-lg-9">
+                                             <input type="text" class="form-control" id="Propietario" placeholder="02020">
+                                          </div>
+                                       </div>
+                                       <div class="form-group row">
+                                          <label for="negocio" class="col-lg-3 col-form-label">Contacto</label>
+                                          <div class="col-lg-9">
+                                             <input type="text" class="form-control" id="negocio" placeholder="+502 0000 0000">
+                                          </div>
+                                       </div>
+                                       <div class="form-group row">
+                                          <label for="ubicacion" class="col-lg-3 col-form-label">Asesor</label>
+                                          <div class="col-lg-9 not_selectable">
+                                             <input type="text" class="form-control bg-white" id="ubicacion" value="Ludy López" readonly>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-12">
+                                       <div class="form-group mt-3">
+                                          <label for="" class="font-weight-normal">Observaciones</label>
+                                          <textarea name="" id="" cols="30" rows="3" class="form-control"></textarea>
+                                       </div>
+                                    </div>
+                                    <!-- /.col -->
+
+                                 </div>
+                                 <!-- /.row -->
                               </div>
-                           </div>
-                           <div class="form-group row">
-                              <label for="ubicacion" class="col-sm-3 col-form-label">Ubicación</label>
-                              <div class="col-sm-9">
-                                 <input type="text" class="form-control" id="ubicacion" placeholder="ej. Col. San Mateo 2, primera entrada">
+                              <div class="modal-footer justify-content-between">
+                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                 <button type="button" class="btn btn-primary">Guardar</button>
                               </div>
+                              <!-- <div class="modal-footer">
+                                 <div class="row">
+                                    <div class="col-12 text-center my-2 ">
+                                       <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                                       <button type="button" class="btn btn-info px-4">Crear</button>
+                                    </div>
+                                 </div>
+                              </div> -->
                            </div>
                         </div>
-                        <div class="col-md-6">
-                           <div class="form-group row">
-                              <label for="codigo" class="col-sm-3 col-form-label">Código</label>
-                              <div class="col-sm-9">
-                                 <input type="text" class="form-control" id="Propietario" placeholder="02020">
-                              </div>
-                           </div>
-                           <div class="form-group row">
-                              <label for="negocio" class="col-sm-3 col-form-label">Contacto</label>
-                              <div class="col-sm-9">
-                                 <input type="text" class="form-control" id="negocio" placeholder="+502 0000 0000">
-                              </div>
-                           </div>
-                           <div class="form-group row">
-                              <label for="ubicacion" class="col-sm-3 col-form-label">Asesor Asignado</label>
-                              <div class="col-sm-9">
-                                 <input type="text" class="form-control" id="ubicacion">
-                              </div>
-                           </div>
+                     </div>
+
+
+                     <div class="card card-info mt-4">
+                        <div class="card-header">
+                           <h5 class="card-title">Bitácora Sesión</h5>
                         </div>
-                        <!-- /.col -->
-                        <div class="col-12 text-center mb-4">
-                           <button type="button" class="btn btn-info">Crear</button>
+                        <div class="card-body">
+                           <p class="text-muted text-center">Bitácora Trabajo Administrativo</p>
+                           <div class="row p-1 pr-1 mt-3">
+                              <div class="col-md-6">
+                                 <div class="form-group row">
+                                    <label for="Propietario" class="col-sm-3 col-form-label">Propietario(a)</label>
+                                    <div class="col-sm-9">
+                                       <input type="text" class="form-control" id="Propietario" placeholder="Nombre completo">
+                                    </div>
+                                 </div>
+                                 <div class="form-group row">
+                                    <label for="negocio" class="col-sm-3 col-form-label">Negocio/Empresa</label>
+                                    <div class="col-sm-9">
+                                       <input type="text" class="form-control" id="negocio" placeholder="Nombre de empresa">
+                                    </div>
+                                 </div>
+                                 <div class="form-group row">
+                                    <label for="ubicacion" class="col-sm-3 col-form-label">Ubicación</label>
+                                    <div class="col-sm-9">
+                                       <input type="text" class="form-control" id="ubicacion" placeholder="ej. Col. San Mateo 2, primera entrada">
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-md-6">
+                                 <div class="form-group row">
+                                    <label for="codigo" class="col-sm-3 col-form-label">Código</label>
+                                    <div class="col-sm-9">
+                                       <input type="text" class="form-control" id="Propietario" placeholder="02020">
+                                    </div>
+                                 </div>
+                                 <div class="form-group row">
+                                    <label for="negocio" class="col-sm-3 col-form-label">Contacto</label>
+                                    <div class="col-sm-9">
+                                       <input type="text" class="form-control" id="negocio" placeholder="+502 0000 0000">
+                                    </div>
+                                 </div>
+                                 <div class="form-group row">
+                                    <label for="ubicacion" class="col-sm-3 col-form-label">Asesor Asignado</label>
+                                    <div class="col-sm-9 not_selectable">
+                                       <input type="text" class="form-control bg-white" id="ubicacion" value="Ludy López" readonly>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- /.col -->
+
+                              <!-- /.col -->
+
+                           </div>
+                           <!-- /.row -->
+
+
                         </div>
-                        <!-- /.col -->
+                     </div>
+
+                     <div class="mt-5">
+                        <div class="alert alert-primary-light mt-4 " role="alert">
+                           Sesión del día
+                        </div>
+                        <div class="table-responsive">
+                           <table class="table table-bordered text-center">
+                              <thead>
+                                 <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Hora de inicio</th>
+                                    <th scope="col">Hora final</th>
+                                    <th scope="col">Editar</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <th scope="row">1</th>
+                                    <td>21/09/2020</td>
+                                    <td>9:00 am</td>
+                                    <td>10:00 am</td>
+                                    <td>
+                                       <button type="button" class="btn btn-warning text-light" data-toggle="modal" data-target="#sesionbitacoraedit">
+                                          <i class="fas fa-edit pl-2 pr-1"></i>
+                                       </button>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
 
                      </div>
-                     <!-- /.row -->
+
+                     <div>
+                        <div class="alert alert-primary-light mt-4 " role="alert">
+                           Próxima sesión
+                        </div>
+                        <div class="table-responsive">
+                           <table class="table table-bordered text-center">
+                              <thead>
+                                 <tr>
+                                    <th scope="col">No.</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Hora de inicio</th>
+                                    <th scope="col">Hora final</th>
+                                    <th scope="col">Editar</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <th scope="row">1</th>
+                                    <td>21/09/2020</td>
+                                    <td>9:00 am</td>
+                                    <td>10:00 am</td>
+                                    <td>
+                                       <button type="button" class="btn btn-warning text-light" data-toggle="modal" data-target="#sesionbitacoraedit">
+                                          <i class="fas fa-edit pl-2 pr-1"></i>
+                                       </button>
+                                    </td>
+                                 </tr>
+                              </tbody>
+                           </table>
+                        </div>
+
+                     </div>
+
+
+                     <div class="row">
+                        <div class="col-12 text-right">
+                           <button class="btn btn-success btn-sm border-success">Crear nueva sesión</button>
+                           <button class="btn btn-success btn-sm border-success">Generar última sesión</button>
+                        </div>
+                     </div>
+
+                     <div class="row">
+                        <div class="col-12">
+                           <div class="form-group">
+                              <label for="exampleFormControlTextarea1">Avances: </label>
+                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                           </div>
+                        </div>
+
+                        <div class="col-12">
+                           <div class="form-group">
+                              <label for="exampleFormControlTextarea1">Temas tratados: </label>
+                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                           </div>
+                        </div>
+
+
+                        <div class="col-12">
+                           <div class="">
+                              <div class="alert alert-primary-light mt-4 " role="alert">
+                                 Tareas
+                              </div>
+                              <div class="p-0">
+                                 <table class="table table-bordered text-center">
+                                    <thead>
+                                       <tr class="table-success">
+                                          <th scope="col">No</th>
+                                          <th scope="col" colspan="3">Tarea</th>
+                                          <th scope="col" colspan="2">Fecha de entrega</th>
+                                          <th scope="col" colspan="2">Material</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr>
+                                          <th>45</th>
+                                          <td colspan="3">Este es el nombre de una tarea</td>
+                                          <td colspan="2">2012/051/5</td>
+                                          <td colspan="2">
+                                             <button type="button" class="btn btn-success text-light" data-toggle="modal" data-target="#subirmaterialmodal">
+                                                Subir <i class="fas fa-upload pl-1"></i>
+                                             </button>
+                                             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#listadematerial">
+                                                Consultar <i class="fas fa-list-ul pl-1"></i>
+                                             </button>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <th>45</th>
+                                          <td colspan="3">Tarea numero docientos doce</td>
+                                          <td colspan="2">2012/051/5</td>
+                                          <td colspan="2">
+                                             <button type="button" class="btn btn-success text-light" data-toggle="modal" data-target="#subirmaterialmodal">
+                                                Subir <i class="fas fa-upload pl-1"></i>
+                                             </button>
+                                             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#listadematerial">
+                                                Consultar <i class="fas fa-list-ul pl-1"></i>
+                                             </button>
+                                          </td>
+                                       </tr>
+                                       
+                                    </tbody>
+                                 </table>
+                              </div>
+                           </div>
+                        </div>
+
+
+                        <div class="col-12">
+                           <div class="form-group">
+                              <label for="exampleFormControlTextarea1" class="font-weight-normal">Observaciones: </label>
+                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                           </div>
+                        </div>
+
+
+
+
+                        <div class="col-12 text-center">
+                           <button class="btn btn-success">Guardar cambios</button>
+                        </div>
+
+                     </div>
                   </div>
-                  <!-- /.card-body -->
+
                </div>
-               <!-- /.card main  -->
             </div>
             <!-- /.container-fluid -->
          </section>
          <!-- /.section content -->
       </div>
-      <!-- /.content DE CONTENIDO -->
+      <!-- /.content wrapper -->
 
-      <!-- jQuery -->
-      <script src="../../../assets/plugins/jquery/jquery.min.js"></script>
-      <!-- Bootstrap 4 -->
-      <script src="../../../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <!-- DataTables -->
-      <script src="../../../assets/plugins/datatables/jquery.dataTables.js"></script>
-      <script src="../../../assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-      <script src="../../../assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-      <script src="../../../assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-      <!-- AdminLTE App -->
-      <script src="../../../assets/js/adminlte.min.js"></script>
-      <!-- AdminLTE for demo purposes -->
-      <script src="../../../assets/js/demo.js"></script>
-      <!-- page script -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
-      <script src="../../../assets/js/functions.js"></script>
    </div>
+
+
+   <!-- MODALS -->
+   <!-- Modal editar sesiones de bitácoras -->
+   <div class="modal fade" id="sesionbitacoraedit" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered">
+         <div class="modal-content">
+            <div class="modal-body">
+               <form>
+                  <div class="form-group">
+                     <label for="fecha2" class="font-weight-normal">Fecha</label>
+                     <input type="date" class="form-control" id="fecha2" aria-describedby="fecha" value="2021-07-22">
+                  </div>
+
+                  <div class="form-row">
+                     <div class="col">
+                        <label for="" class="font-weight-normal">Hora inicial</label>
+                        <input type="time" class="form-control" value="09:00">
+                     </div>
+                     <div class="col">
+                        <label for="" class="font-weight-normal">Hora final</label>
+                        <input type="time" class="form-control" value="10:00">
+                     </div>
+                  </div>
+
+               </form>
+            </div>
+
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+               <button type="button" class="btn btn-success text-light">Guardar
+                  <i class="fas fa-save pl-2 pr-1"></i>
+               </button>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+   <!-- Modal editar sesiones de bitácoras -->
+   <div class="modal fade" id="subirmaterialmodal" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-body">
+               ....
+            </div>
+
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- lista de materiales -->
+   <div class="modal fade" id="listadematerial" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-body">
+               <table class="table table-borderless">
+                  <thead>
+                     <tr>
+                        <th scope="col">Nombre archivo</th>
+                        <th scope="col">Peso</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Opciones</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>Larry the Bird</td>
+                        <td colspan="2">32Mb</td>
+                        <td>PDF</td>
+                        <td>
+                           <button class="btn btn-info">Ver
+                              <i class="fas fa-eye"></i>
+                           </button>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>Larry the Bird</td>
+                        <td colspan="2">32Mb</td>
+                        <td>PDF</td>
+                        <td>
+                           <button class="btn btn-info">Ver
+                              <i class="fas fa-eye"></i>
+                           </button>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>Larry the Bird</td>
+                        <td colspan="2">32Mb</td>
+                        <td>PDF</td>
+                        <td>
+                           <button class="btn btn-info">Ver
+                              <i class="fas fa-eye"></i>
+                           </button>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>Larry the Bird</td>
+                        <td colspan="2">32Mb</td>
+                        <td>PDF</td>
+                        <td>
+                           <button class="btn btn-info">Ver
+                              <i class="fas fa-eye"></i>
+                           </button>
+                        </td>
+                     </tr>
+                     
+                  </tbody>
+               </table>
+            </div>
+
+            <div class="modal-footer">
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+
    <!-- /.wrapper -->
+   <!-- jQuery -->
+   <script src="../../../assets/plugins/jquery/jquery.min.js"></script>
+   <!-- Bootstrap 4 -->
+   <script src="../../../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <!-- DataTables -->
+   <script src="../../../assets/plugins/datatables/jquery.dataTables.js"></script>
+   <script src="../../../assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+   <script src="../../../assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+   <script src="../../../assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+   <!-- AdminLTE App -->
+   <script src="../../../assets/js/adminlte.min.js"></script>
+   <!-- AdminLTE for demo purposes -->
+   <script src="../../../assets/js/demo.js"></script>
+   <!-- page script -->
+   <script src="../../../assets/js/functions.js"></script>
 </body>
 
 </html>
