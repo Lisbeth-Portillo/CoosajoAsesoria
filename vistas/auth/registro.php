@@ -22,7 +22,7 @@
 
 <body>
     <div class="div">
-        <form method="POST" class="formulario" action="">
+        <form method="POST" class="formulario" style="margin-top:3rem" action="">
             <i class="fas fa-user-plus fa-8x fa-lg" style="color:darkblue"></i>
             <br><br>
             <h2>CEDEC</h2>

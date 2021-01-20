@@ -81,8 +81,6 @@ require '../layouts/header.php';
                                   <option value="<?php echo $data["idEscolaridad"]; ?>"><?php echo $data["NombreEsc"]; ?></option>
                               <?php    }
                               }
-
-                              mysqli_close($conexion);
                               ?>
                             </select>
                           </div>
@@ -105,7 +103,7 @@ require '../layouts/header.php';
                                   <option value="<?php echo $data2["idComunidad"]; ?>"><?php echo $data2["NombreComu"]; ?></option>
                               <?php    }
                               }
-                              mysqli_close($conexion);
+                              
                               ?>
                             </select>
                           </div>
@@ -355,10 +353,27 @@ require '../layouts/header.php';
                     <input class="form-control" type="text" name="fangpageempresa" id="fangpageempresa">
                   </div>
                   <div class="form-group">
-                    <label for="sectorempresa">Sector</label>
-                    <select class="form-control select2" name="sectorempresa" id="sectorempresa">
-                    </select>
-                  </div>
+                            <label>Escolaridad</label>
+                            <select class="form-control select2">
+                              <option selected="selected">Seleccione sector</option>
+
+                              <?php
+                              //Datos de la escolaridad
+                              $query3 = mysqli_query($conexion, "SELECT * FROM sector");
+
+
+                              $result3 = mysqli_num_rows($query3);
+                              if ($result3 > 0) {
+                                while ($data3 = mysqli_fetch_array($query3)) {
+                              ?>
+                                  <option value="<?php echo $data3["idSector"]; ?>"><?php echo $data3["NombreSec"]; ?></option>
+                              <?php    }
+                              }
+
+                              mysqli_close($conexion);
+                              ?>
+                            </select>
+                          </div>
                   <div class="form-group">
                     <label for="inversioninicial">Inversión Inicial/Actual</label>
                     <input type="number" step=".01" name="inversioninicial" id="inversioninicial" class="form-control solodosdecimales" placeholder="0.00">
