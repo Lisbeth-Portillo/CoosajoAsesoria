@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['active'])) {
+  echo $_SESSION['active'];
+  header("Location: ../../index.php");
+}else{
+
 include '../../config/Conexion.php';
 require '../layouts/header.php';
 ?>
@@ -20,11 +26,14 @@ require '../layouts/header.php';
   <section class="content">
     <div class="container-fluid">
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card card card-primary">
+      <div class="row ">
+        <div class="col-md-12 mb-3">
+          <div class="card card-primary">
             <div class="card-header pt-2 pb-2">
               <h5 class="text-center my-1">Datos del Empresario</h5>
+              <div class="card-tools float-right">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+              </div>
             </div>
             <!-- /.card-header -->
             <div class="card-body px-2 px-lg-3 px-xl-4">
@@ -227,17 +236,17 @@ require '../layouts/header.php';
                     <div class="card-body">
                       <div class="form-group">
                         <label for="nombre">Ingresos Familiares</label>
-                        <input type="number" class="form-control solodosdecimales" name="ingresofamiliares" id="ingresofamiliares" step=".01" placeholder="0.00" autocomplete="off">
+                        <input type="number" min="0" pattern="^[0-9]+" class="form-control solodosdecimales" name="ingresofamiliares" id="ingresofamiliares" step=".01" placeholder="0.00" autocomplete="off">
                       </div>
 
                       <div class="form-group">
                         <label for="egresofamiliares">Egresos Familiares</label>
-                        <input type="number" class="form-control solodosdecimales" name="egresofamiliares" id="egresofamiliares" step=".01" placeholder="0.00" autocomplete="off">
+                        <input type="number" min="0" pattern="^[0-9]+" class="form-control solodosdecimales" name="egresofamiliares" id="egresofamiliares" step=".01" placeholder="0.00" autocomplete="off">
                       </div>
 
                       <div class="form-group">
                         <label for="nombre">Saldo Final</label>
-                        <input type="number" class="form-control solodosdecimales" name="saldofinal" id="ingresofamiliares" step=".01" placeholder="0.00" autocomplete="off">
+                        <input type="number" min="0" pattern="^[0-9]+" class="form-control solodosdecimales" name="saldofinal" id="ingresofamiliares" step=".01" placeholder="0.00" autocomplete="off">
                       </div>
 
                       <!-- Pregunta 1 -->
@@ -290,7 +299,7 @@ require '../layouts/header.php';
                         <div class="col-6">
                           <div class="form-group">
                             <label>¿Cuanto?</label>
-                            <input type="number" step=".01" name="cuanto1" class="form-control solodosdecimales" placeholder="0.00">
+                            <input type="number" min="0" pattern="^[0-9]+" step=".01" name="cuanto1" class="form-control solodosdecimales" placeholder="0.00">
                           </div>
                         </div>
                       </div>
@@ -315,6 +324,7 @@ require '../layouts/header.php';
         <!-- /.col datos de empresario -->
 
 
+<<<<<<< HEAD
         <div class="col-md-12">
           <div class="card card card-primary">
             <div class="card-header pt-2 pb-2">
@@ -629,472 +639,31 @@ require '../layouts/header.php';
 
 
 
+=======
+        <h3 class="text-secondary font-weight-normal ml-2 ml-lg-1">
+          Empresas del empresario
+        </h3>
+        <div class="col-md-12 mb-3 empresas">
+          <!-- Contenido dinámico -->
+>>>>>>> a24edbd129837170bc06096b03b7f03831fe39de
 
 
+           <!-- Mientras este vacio -->
+           <div class="text-center d-block mt-5 s_loader"> 
+              <h4 class="text-center font-weight-light text-secondary">Ninguna empresa agregada</h4>
           </div>
-
-          <!-- ./card-body -->
         </div>
-        <!-- /.col información general de la empresa -->
 
-        <div class="col-md-12">
-          <div class="card card card-primary">
-            <div class="card-header pt-2 pb-2">
-              <h5 class="text-center my-1">Condiciones Laborales</h5>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body px-2 px-lg-3 px-xl-4">
-              <div class="row">
-
-
-
-                <!-- PRIMER TARJETA -->
-                <div class="col-12 col-sm-12 col-xl-6">
-                  <div class="card card-success">
-                    <div class="card-header">
-                      <h3 class="card-title">Condiciones físicas del lugar de trabajo</h3>
-
-                      <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                      </div>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                      <div class="row mb-2">
-                        <div class="col-sm-6 col-12">
-                          <Label>Mobiliario Adecuado</Label>
-                        </div>
-                        <div class="col-sm-6 col-12">
-                          <div class="row mt-1 si_no_icons">
-                            <div class="col-6">
-                              <input type="radio" name="cond_laboral_preg_1" id="r_si_preg1" class="resp_si" value="1">
-                              <label for="r_si_preg1">
-                                <i class="fas fa-check-circle"></i>
-                              </label>
-                            </div>
-                            <div class="col-6">
-                              <input type="radio" name="cond_laboral_preg_1" id="r_no_preg1" class="resp_no" value="0">
-                              <label for="r_no_preg1">
-                                <i class="fas fa-times-circle icon_no"></i>
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-
-                      <div class="row mb-2">
-                        <div class="col-sm-6 col-12">
-                          <Label>Espacio físico cómodo</Label>
-                        </div>
-                        <div class="col-sm-6 col-12">
-                          <div class="row mt-1 si_no_icons">
-                            <div class="col-6">
-                              <input type="radio" name="cond_laboral_preg_2" id="r_si_preg2" class="resp_si" value="1">
-                              <label for="r_si_preg2">
-                                <i class="fas fa-check-circle"></i>
-                              </label>
-                            </div>
-                            <div class="col-6">
-                              <input type="radio" name="cond_laboral_preg_2" id="r_no_preg2" class="resp_no" value="0">
-                              <label for="r_no_preg2">
-                                <i class="fas fa-times-circle icon_no"></i>
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row mb-2">
-                        <div class="col-sm-6 col-12">
-                          <Label>Buena iluminación</Label>
-                        </div>
-                        <div class="col-sm-6 col-12">
-                          <div class="row mt-1 si_no_icons">
-                            <div class="col-6">
-                              <input type="radio" name="cond_laboral_preg_3" id="r_si_preg3" class="resp_si" value="1">
-                              <label for="r_si_preg3">
-                                <i class="fas fa-check-circle"></i>
-                              </label>
-                            </div>
-                            <div class="col-6">
-                              <input type="radio" name="cond_laboral_preg_3" id="r_no_preg3" class="resp_no" value="0">
-                              <label for="r_no_preg3">
-                                <i class="fas fa-times-circle icon_no"></i>
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row mb-2">
-                        <div class="col-sm-6 col-12">
-                          <Label>Buena ventilación</Label>
-                        </div>
-                        <div class="col-sm-6 col-12">
-                          <div class="row mt-1 si_no_icons">
-                            <div class="col-6">
-                              <input type="radio" name="cond_laboral_preg_4" id="r_si_preg4" class="resp_si" value="1">
-                              <label for="r_si_preg4">
-                                <i class="fas fa-check-circle"></i>
-                              </label>
-                            </div>
-                            <div class="col-6">
-                              <input type="radio" name="cond_laboral_preg_4" id="r_no_preg4" class="resp_no" value="0">
-                              <label for="r_no_preg4">
-                                <i class="fas fa-times-circle icon_no"></i>
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row mb-2">
-                        <div class="col-sm-6 col-12">
-                          <Label>Herramientas adecuadas</Label>
-                        </div>
-                        <div class="col-sm-6 col-12">
-                          <div class="row mt-1 si_no_icons">
-                            <div class="col-6">
-                              <input type="radio" name="cond_laboral_preg_5" id="r_si_preg5" class="resp_si" value="1">
-                              <label for="r_si_preg5">
-                                <i class="fas fa-check-circle"></i>
-                              </label>
-                            </div>
-                            <div class="col-6">
-                              <input type="radio" name="cond_laboral_preg_5" id="r_no_preg5" class="resp_no" value="0">
-                              <label for="r_no_preg5">
-                                <i class="fas fa-times-circle icon_no"></i>
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-
-
-                    </div>
-                    <!-- /.card-body -->
-
-
-                  </div>
-                  <!-- /.primer card -->
-
-
-                </div>
-                <!--/.PRIMER COLUMNA -->
-
-
-
-                <!-- SEGUNDA TARJETA -->
-                <div class="col-12 col-sm-12 col-xl-6">
-                  <div class="card card-success">
-                    <div class="card-header">
-                      <h3 class="card-title">Prestaciones Laborales</h3>
-
-                      <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                      </div>
-                    </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-
-
-
-                      <div class="row mb-2">
-                        <div class="col-12 col-sm-6">
-                          <div class="row">
-                            <div class="col-sm-8 col-12">
-                              <Label>Salario Mínimo</Label>
-                            </div>
-                            <div class="col-sm-4 col-12">
-                              <div class="row mt-1 si_no_icons">
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_1" id="r_si_preg6" class="resp_si" value="1">
-                                  <label for="r_si_preg6">
-                                    <i class="fas fa-check-circle"></i>
-                                  </label>
-                                </div>
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_1" id="r_no_preg6" class="resp_no" value="0">
-                                  <label for="r_no_preg6">
-                                    <i class="fas fa-times-circle icon_no"></i>
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-sm-6 col-12">
-                          <div class="row">
-                            <div class="col-sm-8 col-12">
-                              <Label>Indermnización</Label>
-                            </div>
-                            <div class="col-sm-4 col-12">
-                              <div class="row mt-1 si_no_icons">
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_2" id="r_si_preg7" class="resp_si" value="1">
-                                  <label for="r_si_preg7">
-                                    <i class="fas fa-check-circle"></i>
-                                  </label>
-                                </div>
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_2" id="r_no_preg7" class="resp_no" value="0">
-                                  <label for="r_no_preg7">
-                                    <i class="fas fa-times-circle icon_no"></i>
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-                      <!--/.FILA -->
-
-                      <div class="row mb-2">
-                        <div class="col-sm-6 col-12">
-                          <div class="row">
-                            <div class="col-sm-8 col-12">
-                              <Label>Bonificación</Label>
-                            </div>
-                            <div class="col-sm-4 col-12">
-                              <div class="row mt-1 si_no_icons">
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_3" id="r_si_preg8" class="resp_si" value="1">
-                                  <label for="r_si_preg8">
-                                    <i class="fas fa-check-circle"></i>
-                                  </label>
-                                </div>
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_3" id="r_no_preg8" class="resp_no" value="0">
-                                  <label for="r_no_preg8">
-                                    <i class="fas fa-times-circle icon_no"></i>
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-sm-6 col-12">
-                          <div class="row">
-                            <div class="col-sm-8 col-12">
-                              <Label>IGSS</Label>
-                            </div>
-                            <div class="col-sm-4 col-12">
-                              <div class="row mt-1 si_no_icons">
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_4" id="r_si_preg9" class="resp_si" value="1">
-                                  <label for="r_si_preg9">
-                                    <i class="fas fa-check-circle"></i>
-                                  </label>
-                                </div>
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_4" id="r_no_preg9" class="resp_no" value="0">
-                                  <label for="r_no_preg9">
-                                    <i class="fas fa-times-circle icon_no"></i>
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-                      <!--/.FILA -->
-                      <div class="row mb-2">
-                        <div class="col-sm-6 col-12">
-                          <div class="row">
-                            <div class="col-sm-8 col-12">
-                              <Label>Aguinaldo</Label>
-                            </div>
-                            <div class="col-sm-4 col-12">
-                              <div class="row mt-1 si_no_icons">
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_5" id="r_si_preg10" class="resp_si" value="1">
-                                  <label for="r_si_preg10">
-                                    <i class="fas fa-check-circle"></i>
-                                  </label>
-                                </div>
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_5" id="r_no_preg10" class="resp_no" value="0">
-                                  <label for="r_no_preg10">
-                                    <i class="fas fa-times-circle icon_no"></i>
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-sm-6 col-12">
-                          <div class="row">
-                            <div class="col-sm-8 col-12">
-                              <Label>Paga ISR</Label>
-                            </div>
-                            <div class="col-sm-4 col-12">
-                              <div class="row mt-1 si_no_icons">
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_6" id="r_si_preg11" class="resp_si" value="1">
-                                  <label for="r_si_preg11">
-                                    <i class="fas fa-check-circle"></i>
-                                  </label>
-                                </div>
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_6" id="r_no_preg11" class="resp_no" value="0">
-                                  <label for="r_no_preg11">
-                                    <i class="fas fa-times-circle icon_no"></i>
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-                      <!--/.FILA -->
-                      <div class="row mb-2">
-                        <div class="col-sm-6 col-12">
-                          <div class="row">
-                            <div class="col-sm-8 col-12">
-                              <Label>Bono 14</Label>
-                            </div>
-                            <div class="col-sm-4 col-12">
-                              <div class="row mt-1 si_no_icons">
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_7" id="r_si_preg12" class="resp_si" value="1">
-                                  <label for="r_si_preg12">
-                                    <i class="fas fa-check-circle"></i>
-                                  </label>
-                                </div>
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_7" id="r_no_preg12" class="resp_no" value="0">
-                                  <label for="r_no_preg12">
-                                    <i class="fas fa-times-circle icon_no"></i>
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-sm-6 col-12">
-                          <div class="row">
-                            <div class="col-sm-8 col-12">
-                              <Label>Incentivos</Label>
-                            </div>
-                            <div class="col-sm-4 col-12">
-                              <div class="row mt-1 si_no_icons">
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_8" id="r_si_preg13" class="resp_si" value="1">
-                                  <label for="r_si_preg13">
-                                    <i class="fas fa-check-circle"></i>
-                                  </label>
-                                </div>
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_8" id="r_no_preg13" class="resp_no" value="0">
-                                  <label for="r_no_preg13">
-                                    <i class="fas fa-times-circle icon_no"></i>
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!--/.FILA -->
-                      <div class="row mb-2">
-                        <div class="col-sm-6 col-12">
-                          <div class="row">
-                            <div class="col-sm-8 col-12">
-                              <Label>Vacaciones</Label>
-                            </div>
-                            <div class="col-sm-4 col-12">
-                              <div class="row mt-1 si_no_icons">
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_9" id="r_si_preg14" class="resp_si" value="1">
-                                  <label for="r_si_preg14">
-                                    <i class="fas fa-check-circle"></i>
-                                  </label>
-                                </div>
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_9" id="r_no_preg14" class="resp_no" value="0">
-                                  <label for="r_no_preg14">
-                                    <i class="fas fa-times-circle icon_no"></i>
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-sm-6 col-12">
-                          <div class="row">
-                            <div class="col-sm-8 col-12">
-                              <Label>Extras</Label>
-                            </div>
-                            <div class="col-sm-4 col-12">
-                              <div class="row mt-1 si_no_icons">
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_10" id="r_si_preg15" class="resp_si" value="1">
-                                  <label for="r_si_preg15">
-                                    <i class="fas fa-check-circle"></i>
-                                  </label>
-                                </div>
-                                <div class="col-6">
-                                  <input type="radio" name="prest_laboral_preg_10" id="r_no_preg15" class="resp_no" value="0">
-                                  <label for="r_no_preg15">
-                                    <i class="fas fa-times-circle icon_no"></i>
-                                  </label>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
-                      <!--/.FILA -->
-
-                    </div>
-                    <!-- /.card-body -->
-                  </div>
-                  <!-- /card -->
-                </div>
-                <!--/.SEGUNDA COLUMNA -->
-              </div>
-              <!-- /.row -->
-
-              <div class="row ">
-                <!--
-                <div class="col-md-6">
-                  <div class="input-group input-group-sm mb-3">
-                    <div class="input-group-prepend ">
-                      <span class="input-group-text bg-primary border-primary" id="inputGroup-sizing-sm">Filtro de negocio</span>
-                    </div>
-                    <select class="form-control" id="filt_negocio" required>
-                      <option selected>Seleccionar</option>
-                      <option value="1">Microcréditos</option>
-                      <option value="2">Mipyme</option>
-                    </select>
-                  </div>
-                </div>
-                
-                            -->
-                <div class="col-md-6 align-content-center">
-                  <button type="button" class="btn btn-primary btn-sm float-right">Agregar nueva empresa/negocio</button>
-                </div>
-              </div>
+        <div class="col-12">
+          <div class="row ">
+            <div class="col-md-6">
 
             </div>
-            <!-- ./card-body -->
+            <div class="col-md-6 align-content-center">
+              <button type="button" class="btn btn-primary float-right" id="nueva_empresa_btn" title="Agregar nueva empresa/negocio">Añadir</button>
+            </div>
           </div>
-          <!-- /.card -->
-
         </div>
-        <!-- /.col condiciones laborales -->
-
 
       </div>
       <!-- row -->
@@ -1108,6 +677,7 @@ require '../layouts/header.php';
 <!-- ./wrapper -->
 <?php
 require '../layouts/scripts.php';
+                            }
 ?>
 </body>
 

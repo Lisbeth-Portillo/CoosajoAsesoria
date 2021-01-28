@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once "../modelos/Usuario.php";
-
 $usuario = new Usuario();
 //Verificacion de lo recibido 
 $idUsuarios = isset($_POST["idUsuarios"]) ? limpiarCadena($_POST["idUsuarios"]) : "";
@@ -12,6 +11,62 @@ $Correo = isset($_POST["Correo"]) ? limpiarCadena($_POST["Correo"]) : "";
 $Rol_idRol = isset($_POST["Rol_idRol"]) ? limpiarCadena($_POST["Rol_idRol"]) : "";
 
 switch ($_GET["op"]) {
+	case 'registro':
+
+		//Validacion del usuario y correo
+		$vusuario = $usuario->verificarusuario($Usuario, $Correo);
+		$fetchU = $vusuario->fetch_object();
+
+		if ($fetchU->Usuario > 0) {
+			echo '2';
+		}else{
+			$clavehash = hash("SHA256", $Pass);
+			$estado = 0;
+			$permisonAsoc = 7;
+			$rol = 3;
+			$respta = $usuario->insertar($Usuario, $clavehash, $estado , $Correo, $rol, $permisonAsoc);
+
+			$id = $usuario->obtenerid($Usuario, $clavehash, $Correo);
+			$idU=$id->fetch_object();
+
+			$_SESSION['active'] = true;
+			$_SESSION['idUsuarios'] = $idU->idUsuarios;
+			$_SESSION['Usuario'] = $idU->Usuario;
+			$_SESSION['Estado'] = $idU->Estado ;
+			$_SESSION['Correo'] = $idU->Correo;
+			$_SESSION['Rol_idRol'] = $idU->Rol_idRol;
+
+			$marcados=$usuario->listarmarcados($idU->idUsuarios);
+
+		//declaramos el array para almacenar todos los permisos
+		$valores=array();
+
+		//almacenamos los permisos marcados en al array
+		while ($per = $marcados->fetch_object()) {
+			array_push($valores, $per->Permisos_idPermisos);
+		} 
+			//Accesos del usuario
+			//Acceso al módulo de Asesoria, edición de documentos e informes
+			in_array(1, $valores) ? $_SESSION['Asesoria'] = 1 : $_SESSION['Asesoria'] = 0;
+			//Acceso al módulo de Microcréditos, edición de documentos e informes
+			in_array(2, $valores) ? $_SESSION['Microcreditos'] = 1 : $_SESSION['Microcreditos'] = 0;
+			//Acceso al módulo de Formación, crear, editar, eliminar, informes
+			in_array(3, $valores) ? $_SESSION['FormacionAse'] = 1 : $_SESSION['FormacionAse'] = 0;
+			//Acceso al formulario de inscripción, datos del evento
+			in_array(4, $valores) ? $_SESSION['FormacionAso'] = 1 : $_SESSION['FormacionAso'] = 0;
+			//Impresión de documentos, eliminación de datos
+			in_array(5, $valores) ? $_SESSION['Impresión'] = 1 : $_SESSION['Impresión'] = 0;
+			//Acceso a usuarios, contraseñas, edición de metas.
+			in_array(6, $valores) ? $_SESSION['Jefe'] = 1 : $_SESSION['Jefe'] = 0;
+			//Acceso a la linea base, carta de compromiso, diagnostico
+			in_array(7, $valores) ? $_SESSION['AsesoriaAso'] = 1 : $_SESSION['AsesoriaAso'] = 0;
+
+			echo '1';
+		}
+		
+		
+		break;
+
 	case 'guardaryeditar':
 
 		//Hash SHA256 para la contraseña - algoritmo de encriptación 256 bits 
@@ -95,11 +150,12 @@ switch ($_GET["op"]) {
 
 	case 'verificar':
 		//validar si el usuario tiene acceso al sistema
-		$usuarioo = $_POST['usuarioo'];
-		$password = $_POST['password'];
+		$usuarioo = $_POST['UsuarioL'];
+		$password = $_POST['PassL'];
 
 		//Hash SHA256 en la contraseña
 		$clavehash = hash("SHA256", $password);
+
 
 		$rspta = $usuario->verificar($usuarioo, $clavehash);
 
@@ -121,7 +177,7 @@ switch ($_GET["op"]) {
 
 			//Almacenamiento de los permisos marcados en al array
 			while ($per = $marcados->fetch_object()) {
-				array_push($valores, $per->idpermiso);
+				array_push($valores, $per->Permisos_idPermisos);
 			}
 
 			//Accesos del usuario
@@ -139,9 +195,11 @@ switch ($_GET["op"]) {
 			in_array(5, $valores) ? $_SESSION['Jefe'] = 1 : $_SESSION['Jefe'] = 0;
 			//Acceso a la linea base, carta de compromiso, diagnostico
 			in_array(6, $valores) ? $_SESSION['AsesoriaAso'] = 1 : $_SESSION['AsesoriaAso'] = 0;
-		}
-		echo json_encode($fetch);
+			echo $_SESSION['Rol_idRol'];
 
+		}else{
+			echo '4';
+		}
 
 		break;
 	case 'salir':

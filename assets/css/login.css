@@ -8,6 +8,37 @@
 }
 
 
+/* Password Strength Checker Styles */
+
+#meter_wrapper {
+    width: 150px;
+    height: 35px;
+    margin: 1px;
+    border-radius: 3px;
+    background-color: white;
+}
+
+#meter {
+    width: 0px;
+    height: 35px;
+    border-radius: 2px;
+}
+
+#pass_type {
+    font-size: 15px;
+    margin-top: 10px;
+    position: absolute;
+    top: 0;
+    right: 50px;
+    margin-bottom: 10%;
+    color: grey;
+    text-align: center;
+    color: white;
+    letter-spacing: 0;
+    text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
+}
+
+
 /*
 .formulario {
     height: 650px;

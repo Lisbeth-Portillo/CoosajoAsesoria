@@ -1,7 +1,14 @@
+<?php
+/*
+if (!isset($_SESSION['Rol_idRol'])) {
+  header("Location: vistas/asociado");
+
+}else{*/
+  ?>
 <!DOCTYPE html>
 <html lang="es">
 
-<head>
+<head> -
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CEDEC</title>
@@ -27,11 +34,7 @@
   <link rel="stylesheet" href="assets/css/login.css">
 
 </head>
-<style>
-  input:invalid {
-  border: 2px solid red;
-}
-</style>
+
 <body>
 
   <div class="text-center">
@@ -53,12 +56,12 @@
         <div class="modal-content">
           <div class="modal-header">
             <h4 class="modal-title" id="staticBackdropLabel">Registrarte</h4>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal();">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body" style="background: url('assets/img/registro.jpg'); background-size:cover">
-            <form method="POST" id="registroU">
+            <form method="POST" id="registroU" name="registroU" onsubmit="event.preventDefault(); registro();">
               <h2>CEDEC</h2>
               <h6>Centro de Emprendimiento y Desarrollo <br> </h6>
               <h6>Empresarial Coperativo</h6>
@@ -70,7 +73,7 @@
                     <i class="fa fa-user-check"></i>
                   </span>
                 </div>
-                <input type="text" name="usuarioR" id="usuarioR" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1" autocomplete="off">
+                <input type="text" name="Usuario" id="Usuario" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1" autocomplete="off">
               </div>
 
               <!-- Correo -->
@@ -80,7 +83,7 @@
                     <i class="fas fa-envelope"></i>
                   </span>
                 </div>
-                <input type="email" name="correoR" id="correoR" class="form-control" placeholder="Correo" aria-label="Correo" aria-describedby="basic-addon1" autocomplete="off">
+                <input type="text" name="Correo" id="Correo" class="form-control" placeholder="Correo" aria-label="Correo" aria-describedby="basic-addon1" autocomplete="off">
               </div>
 
               <!-- Contraseña -->
@@ -90,14 +93,19 @@
                     <i class="fas fa-unlock-alt"></i>
                   </span>
                 </div>
-                <input type="password" name="passwordR" id="passwordR" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1"  autocomplete="off">
+                <input type="password" name="Pass" id="Pass" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1" autocomplete="off">
+                <span class="input-group-addon">
+                <div id="meter_wrapper">
+                <span id="pass_type"> </span>
+                <div id="meter"> </div>
+                </div>
+                </span>
               </div>
-
-            </form>
           </div>
           <div class="text-center">
-            <button type="button" class="btn btn-primary btn-lg mt-3 mb-3" onclick="registro()">Registrarse</button>
+            <button type="submit" class="btn btn-primary btn-lg mt-3 mb-3">Registrarse</button>
           </div>
+          </form>
         </div>
       </div>
     </div>
@@ -114,7 +122,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="staticBackdropLabel">Inicio de sesión</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal();">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -131,7 +139,7 @@
                     <i class="fa fa-user-check"></i>
                   </span>
                 </div>
-                <input type="text" name="usuarioL" id="usuarioL" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1" autocomplete="off">
+                <input type="text" name="UsuarioL" id="UsuarioL" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1" autocomplete="off">
               </div>
 
               <!-- Contraseña -->
@@ -141,7 +149,7 @@
                     <i class="fas fa-unlock-alt"></i>
                   </span>
                 </div>
-                <input type="password" name="passwordL" id="passwordL" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1" autocomplete="off">
+                <input type="password" name="PassL" id="PassL" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1" autocomplete="off">
               </div>
 
             </form>
@@ -173,9 +181,12 @@
   <script src="assets/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap -->
   <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>  
-  <script src="scripts/login.js"></script>  
+  <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script src="scripts/login.js"></script>
   <script src="assets/alertify/alertify.js"></script>
 </body>
 
 </html>
+<?php
+//}
+?>

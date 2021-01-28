@@ -13,11 +13,14 @@ class Usuario
 	//Metodo insertar usuario
 	public function insertar($Usuario, $Pass, $Estado, $Correo, $Rol_idRol, $permisos)
 	{
-		$sql = "INSERT INTO usuario (Usuario,Pass,Estado,Correo) VALUES ('$Usuario','$Pass','$Estado','$Correo'$Rol_idRol')";
-		//return ejecutarConsulta($sql);
+		$sql = "INSERT INTO usuarios (Usuario,Pass,Estado,Correo,Rol_idRol) VALUES ('$Usuario','$Pass','$Estado','$Correo','$Rol_idRol')";
+
+		//Obtencion del id almacenado
 		$idusuarionew = ejecutarConsulta_retornarID($sql);
 		$num_elementos = 0;
 		$sw = true;
+		//Verifica y guarda los permisos del usuario
+		if(is_array($permisos)){
 		while ($num_elementos < count($permisos)) {
 			//Obtencion de permisos del usuario
 			$sql_detalle = "INSERT INTO permisosusuarios (Usuarios_idUsuarios,Permisos_idPermisos) VALUES('$idusuarionew','$permisos[$num_elementos]')";
@@ -25,6 +28,11 @@ class Usuario
 			$num_elementos = $num_elementos + 1;
 		}
 		return $sw;
+	}else{
+		$sql_detalle = "INSERT INTO permisosusuarios (Usuarios_idUsuarios,Permisos_idPermisos) VALUES('$idusuarionew','$permisos')";
+			ejecutarConsulta($sql_detalle) or $sw = false;
+			return $sw;
+	}
 	}
 
 	//Edicion de usuario
@@ -85,16 +93,39 @@ class Usuario
 	}
 
 	//Metodo para listar permisos de los usuarios
-	public function listarmarcados($idPermisosUsuarios)
+	public function listarmarcados($id)
 	{
-		$sql = "SELECT * FROM permisosusuarios WHERE Usuarios_idUsuarios='$idPermisosUsuarios'";
+		$sql = "SELECT * FROM permisosusuarios WHERE Usuarios_idUsuarios='$id'";
 		return ejecutarConsulta($sql);
 	}
 
 	//Funcion que verifica el acceso al sistema del usuario
-	public function verificar($usuarioo, $clavehash)
+	public function verificar($Usuario, $Pass)
 	{
-		$sql = "SELECT idUsuarios,Usuario,Pass,Estado,Correo,Rol_idRol FROM usuarios WHERE Usuario='$usuarioo' AND Pass='$clavehash' AND Estado='0'";
+		$sql = "SELECT * FROM usuarios WHERE Usuario='$Usuario' AND Pass='$Pass' AND Estado='0'";
 		return ejecutarConsulta($sql);
 	}
+
+	//Funcion que verifica el acceso al sistema del usuario
+	public function verificarcorreo($Correo)
+	{
+		$sql = "SELECT Correo FROM usuarios WHERE Correo='$Correo' LIMIT 1";
+		return ejecutarConsulta($sql);
+	}
+
+	//Funcion que verifica el acceso al sistema del usuario
+	public function verificarusuario($Usuario,$Correo)
+	{
+		$sql = "SELECT COUNT(idUsuarios) AS Usuario FROM usuarios WHERE Usuario='$Usuario' OR Correo = '$Correo'";
+		return ejecutarConsulta($sql);
+	}
+	
+
+	//Funcion para obtener id del usuario registrado
+	public function obtenerid($Usuario, $Pass, $Correo)
+	{
+		$sql = "SELECT * FROM usuarios WHERE Usuario='$Usuario' AND Pass='$Pass' AND Estado='0' AND Correo='$Correo'";
+		return ejecutarConsulta($sql);
+	}
+
 }

@@ -34,41 +34,14 @@ require '../layouts/headerAsesor.php';
 
         </div>
         <!-- /.SEGUNDA COLUMNA -->
-
-
-
-
-</div>
-<!-- /.SECCION DE TARJETAS -->
-</div>
-<!-- ./card-body -->
-</div>
-<!-- /.card -->
-
+    </section>
 </div>
 
-</div>
-<!-- /.row -->
 
-
-
-
-</div>
-<!-- container-fluid -->
-
-
-</section>
-<!-- section content -->
-
-</div>
-<!-- content-wrapper -->
-
-</div>
-<!-- ./wrapper -->
 
 <?php
-    require '../layouts/scripts.php';
-    ?>
-    </body>
+require '../layouts/scripts.php';
+?>
+</body>
 
-    </html>
+</html>

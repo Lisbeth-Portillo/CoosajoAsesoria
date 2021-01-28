@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -39,7 +38,6 @@
 
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-
       <!-- Left navbar links -->
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -51,6 +49,30 @@
           <!-- otro link -->
         <li class="nav-item d-none d-sm-inline-block">
           <!-- otro link -->
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <!-- User options -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            Ludy López
+            <i class="fas fa-angle-down"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <span class="dropdown-item dropdown-header">Opciones de cuenta</span>
+
+            <div class="dropdown-divider"></div>
+
+            <a href="#" class="dropdown-item">
+              Configurar
+            </a>
+
+
+
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item dropdown-footer">Cerrar sesion</a>
+          </div>
         </li>
       </ul>
     </nav>
@@ -67,13 +89,16 @@
       <!-- Sidebar -->
       <div class="sidebar">
 
-      <nav class="mt-4">
+
+        <!-- Sidebar Menu -->
+        <nav class="mt-4">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+
             <!--Menú desplegable documentos -->
             <li class="nav-item has-treeview">
-              <a href="agendasesor.php" class="nav-link">
+              <a href="agenda.php" class="nav-link">
                 <i class="nav-icon fas fa-calendar-alt"></i>
                 <p>
                   Agenda
@@ -83,14 +108,21 @@
             <li class="nav-item menu-open">
               <a href="../asociado/carta.php" class="nav-link active">
                 <i class="nav-icon fas fa-handshake"></i>
-                <p>Asesoria
+                <p>Asesorias
                   <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
-              <ul class="nav nav-treeview">
+              <ul class="nav nav-treeview mb-2">
                 <li class="nav-item">
-                  <a href="../asociado/index.php" class="nav-link active pl-5">
-                    <p>Lista</p>
+                  <a href="lista_asesorias.php" class="nav-link active">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Resumen</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="buscar_empresa.php" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Detalle por empresa</p>
                   </a>
                 </li>
               </ul>
@@ -131,3 +163,86 @@
       </div>
       <!-- /.sidebar -->
     </aside>
+
+
+
+
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <section class="content-header">
+        <div class="container-fluid">
+
+
+          <div class="row mb-2">
+            <div class="col-sm-12">
+              <h1 class="text-dark ml-1 ml-lg-0">Lista de asesorias</h1>
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+
+
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content-header -->
+
+      <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+          <!-- SELECT2 EXAMPLE -->
+
+          <div class="card card-default">
+
+            <!-- /.card-header -->
+         
+          </div>
+          <!-- /.card -->
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="buscar_asociado">
+
+          </div>
+        </div>
+        <div class="col-md-8">
+
+        </div>
+      </div>
+
+
+
+
+    </div>
+    <!-- /.SECCION DE CONTENIDO -->
+
+
+    <script src="../../assets/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Select2 -->
+    <script src="../../assets/plugins/select2/js/select2.full.min.js"></script>
+    <!-- Bootstrap4 Duallistbox -->
+    <script src="../../assets/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+    <!-- InputMask -->
+    <script src="../../assets/plugins/moment/moment.min.js"></script>
+    <script src="../../assets/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+    <!-- date-range-picker -->
+    <script src="../../assets/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- bootstrap color picker -->
+    <script src="../../assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="../../assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Bootstrap Switch -->
+    <script src="../../assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../assets/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../assets/js/demo.js"></script>
+    <!-- Page script -->
+
+</body>
+
+</html>
