@@ -22,7 +22,7 @@
 
 <body>
     <div class="div">
-        <form method="POST" class="formulario" action="">
+        <form method="POST" class="formulario" style="margin-top:3rem" id="registroU">
             <i class="fas fa-user-plus fa-8x fa-lg" style="color:darkblue"></i>
             <br><br>
             <h2>CEDEC</h2>
@@ -31,16 +31,16 @@
             <div class="contenedor">
                 <div class="input-contenedor">
                     <i class="fa fa-user-check"></i>
-                    <input id="name" class="form-control-lg" name="name" value="" type="text" placeholder="Nombre de usuario" autofocus>
+                    <input id="usuarioR" class="form-control-lg" name="usuarioR" value="" type="text" placeholder="Nombre de usuario" autofocus>
                 </div>
                 <div class="input-contenedor">
                     <i class="fas fa-envelope  icon"></i>
-                    <input id="email" class="form-control-lg  " type="email" placeholder="Correo" name="email" value="">
+                    <input id="correoR" class="form-control-lg  " type="email" placeholder="Correo" name="correoR" value="">
                 </div>
 
                 <div class="input-contenedor">
                     <i class="fas fa-unlock-alt icon"></i>
-                    <input id="password" type="password" class="form-control-lg" value="" name="password" placeholder="Contraseña">
+                    <input id="passwordR" type="password" class="form-control-lg" value="" name="passwordR" placeholder="Contraseña">
                 </div>
                 <p>Al registrarse acepta nuestros términos y condiciones de uso y políticas de privacidad <a href="">Leer términos y condiciones</a></p>
 
@@ -53,5 +53,11 @@
         </div>
     </div>
 </body>
-
+  <!-- jQuery -->
+  <script src="../../assets/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="../../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../../assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+<script src="../../scripts/login.js"></script>  
+  <script src="../../assets/alertify/alertify.js"></script>
 </html>

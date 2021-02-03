@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['active'])) {
+  echo $_SESSION['active'];
+  header("Location: ../../index.php");
+}else{
+
 include '../../config/Conexion.php';
 require '../layouts/header.php';
 ?>
@@ -84,8 +90,6 @@ require '../layouts/header.php';
                                   <option value="<?php echo $data["idEscolaridad"]; ?>"><?php echo $data["NombreEsc"]; ?></option>
                               <?php    }
                               }
-
-                              mysqli_close($conexion);
                               ?>
                             </select>
                           </div>
@@ -108,7 +112,7 @@ require '../layouts/header.php';
                                   <option value="<?php echo $data2["idComunidad"]; ?>"><?php echo $data2["NombreComu"]; ?></option>
                               <?php    }
                               }
-                              mysqli_close($conexion);
+                              
                               ?>
                             </select>
                           </div>
@@ -320,12 +324,329 @@ require '../layouts/header.php';
         <!-- /.col datos de empresario -->
 
 
+<<<<<<< HEAD
+        <div class="col-md-12">
+          <div class="card card card-primary">
+            <div class="card-header pt-2 pb-2">
+              <h5 class="text-center my-1">Información general de la empresa</h5>
+            </div>
+            <!-- /.card-header -->
+
+
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="nombreempresa">Nombre de la empresa o negocio</label>
+                    <input type="text" class="form-control" name="nombreempresa" id="nombreempresa" placeholder="" autocomplete="off">
+                  </div>
+                  <!-- /.form-group -->
+
+                  <div class="form-group">
+                    <label for="razonsocial">Razón Social</label>
+                    <input class="form-control" type="text" name="razonsocial" id="razonsocial">
+                  </div>
+                  <div class="form-group">
+                    <label for="direccionempresa">Dirección</label>
+                    <input class="form-control" type="text" name="direccionempresa" id="direccionempresa">
+                  </div>
+                  <div class="form-group">
+                    <label for="telefonoempresa">Teléfono</label>
+                    <input class="form-control" type="text" name="telefonoempresa" id="telefonoempresa" value="+502">
+                  </div>
+                  <div class="form-group">
+                    <label for="correoempresa">Correo Electrónico</label>
+                    <input class="form-control" type="text" name="correoempresa" id="correoempresa">
+                  </div>
+                  <div class="form-group">
+                    <label for="fangpageempresa">Página/Fanpage</label>
+                    <input class="form-control" type="text" name="fangpageempresa" id="fangpageempresa">
+                  </div>
+                  <div class="form-group">
+                            <label>Escolaridad</label>
+                            <select class="form-control select2">
+                              <option selected="selected">Seleccione sector</option>
+
+                              <?php
+                              //Datos de la escolaridad
+                              $query3 = mysqli_query($conexion, "SELECT * FROM sector");
+
+
+                              $result3 = mysqli_num_rows($query3);
+                              if ($result3 > 0) {
+                                while ($data3 = mysqli_fetch_array($query3)) {
+                              ?>
+                                  <option value="<?php echo $data3["idSector"]; ?>"><?php echo $data3["NombreSec"]; ?></option>
+                              <?php    }
+                              }
+
+                              mysqli_close($conexion);
+                              ?>
+                            </select>
+                          </div>
+                  <div class="form-group">
+                    <label for="inversioninicial">Inversión Inicial/Actual</label>
+                    <input type="number" step=".01" name="inversioninicial" id="inversioninicial" class="form-control solodosdecimales" placeholder="0.00">
+                  </div>
+
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="form-gruop">
+                        <label for="inversionpropia">Inversión Propia</label>
+                        <input id="inversionpropia" name="inversionpropia" type="number" step=".01" class="form-control solodosdecimales" placeholder="0.00">
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-gruop">
+                        <label for="credito">Crédito</label>
+                        <input id="credito" name="credito" type="number" step=".01" class="form-control solodosdecimales" placeholder="0.00">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.row -->
+                </div>
+                <div class="col-md-6 ">
+
+                  <div class="row mt-3">
+                    <div class="col-6">
+                      <div class="form-gruop">
+                        <label for="inversionterceros">Inversión de Terceros</label>
+                        <input id="inversionterceros" name="inversionterceros" type="number" step=".01" class="form-control solodosdecimales" placeholder="0.00">
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-gruop">
+                        <label for="otrainversion">Otro</label>
+                        <input id="otrainversion" name="otrainversion" type="number" step=".01" class="form-control solodosdecimales" placeholder="0.00">
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.row -->
+
+                  <div>
+                    <div class="alert alert-primary mt-4 py-1" role="alert">
+                      Volumen de venta los ultimos 3 años
+                    </div>
+                    <div class="row">
+                      <div class="col-4 ultimostresanios">
+                        <label for="aniofacturacion1" class="">Facturación</label>
+                        <div class="form-group">
+                          <input type="text" id="aniofacturacion1" name="aniofacturacion1" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" name="aniofacturacion2" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <input type="text" name="aniofacturacion3" class="form-control">
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <label for="montoanual1">Monto Anual</label>
+
+                        <div class="form-group">
+                          <input type="number" step=".01" class="form-control solodosdecimales" name="montoanual1" id="montoanual1" placeholder="0.00">
+                        </div>
+                        <div class="form-group">
+                          <input type="number" step=".01" class="form-control solodosdecimales" name="montoanual2" placeholder="0.00">
+                        </div>
+                        <div class="form-group">
+                          <input type="number" step=".01" class="form-control solodosdecimales" name="montoanual3" placeholder="0.00">
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <label for="montomensual1">Monto Mensual</label>
+                        <div class="form-group">
+                          <input type="number" step=".01" class="form-control solodosdecimales" name="montomensual1" id="montomensual1" placeholder="0.00">
+                        </div>
+                        <div class="form-group">
+                          <input type="number" step=".01" class="form-control solodosdecimales" name="montomensual2" placeholder="0.00">
+                        </div>
+                        <div class="form-group">
+                          <input type="number" step=".01" class="form-control solodosdecimales" name="montomensual3" placeholder="0.00">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="alert alert-primary mt-3 py-1" role="alert">
+                      ¿En qué ha invertido su empresa en los útimos 3 años?
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <!-- checkbox -->
+                        <div class="form-group">
+                          <div class="form-check mb-1">
+                            <input class="form-check-input" id="invertidochekc1" type="checkbox" name=invertido_ultimos3anios[] value="1">
+                            <label class="form-check-label" for="invertidochekc1">En procesos</label>
+                          </div>
+                          <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="invertidochekc2" name=invertido_ultimos3anios[] value="2">
+                            <label class="form-check-label" for="invertidochekc2">Maquinaria/Equipo</label>
+                          </div>
+                          <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="invertidochekc3" name=invertido_ultimos3anios[] value="3">
+                            <label class="form-check-label" for="invertidochekc3">Software/Hardware</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-sm-6">
+                        <!-- checkbox -->
+                        <div class="form-group">
+                          <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="invertidochekc4" name=invertido_ultimos3anios[] value="4">
+                            <label class="form-check-label" for="invertidochekc4">Productos/Servicios</label>
+                          </div>
+                          <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="invertidochekc5" name=invertido_ultimos3anios[] value="5">
+                            <label class="form-check-label" for="invertidochekc5">Nuevas Tecnologías</label>
+                          </div>
+                          <div class="form-check mb-1">
+                            <input class="form-check-input" type="checkbox" id="invertidochekc6" name=invertido_ultimos3anios[] value="6">
+                            <label class="form-check-label" for="invertidochekc6">Otros</label>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+
+                  <div>
+                    <div class="alert alert-primary mt-3 py-1" role="alert">
+                      Aspectos relacionados a Recursos Humanos
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-md-6">
+                        Empleados con los que cuenta actualmente
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="input-group flex-nowrap">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping">
+                              <i class="ion-ios-body"></i>
+                            </span>
+                          </div>
+                          <input type="number" name="emp_hombres" class="form-control" placeholder="0">
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="input-group flex-nowrap">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping">
+                              <i class="fas fa-female"></i>
+                            </span>
+                          </div>
+                          <input type="number" name="emp_mujeres" class="form-control" placeholder="0">
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="row mt-3 pb-0">
+                      <div class="col-12 col-md-6">
+                        ¿Cuántos de ellos están entre los 14 y 24 años?
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="input-group flex-nowrap">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping">
+                              <i class="ion-ios-body"></i>
+                            </span>
+                          </div>
+                          <input name="emp_hombres_14_24" type="number" class="form-control" placeholder="0">
+                        </div>
+                      </div>
+                      <div class="col-6 col-md-3">
+                        <div class="input-group flex-nowrap">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text" id="addon-wrapping">
+                              <i class="fas fa-female"></i>
+                            </span>
+                          </div>
+                          <input type="number" name="emp_mujeres_14_24" class="form-control" placeholder="0">
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="row mt-3">
+                      <div class="col-12 col-md-6">
+                        Total de empleados
+                      </div>
+                      <div class="col-6 col-md-6">
+                        <div class="input-group flex-nowrap">
+                          <input name="total_empleados" type="number" class="form-control bg-white" placeholder="0" disabled>
+                        </div>
+                      </div>
+
+
+                    </div>
+
+                  </div>
+
+
+
+                </div>
+
+              </div>
+
+
+              <div class="row">
+                <div class="col-12 mt-5">
+                  <div class="form-group">
+
+
+                    <label>Actualmente, ¿Brinda usted, algún tipo de capacitación a sus Empleados?</label>
+
+                    <div>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="ud_brinda_r_si" name="genero" class="custom-control-input">
+                        <label class="custom-control-label font-weight-normal" for="ud_brinda_r_si">Si</label>
+                      </div>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="ud_brinda_r_no" name="genero" class="custom-control-input">
+                        <label class="custom-control-label font-weight-normal" for="ud_brinda_r_no">No</label>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <!-- col-12 -->
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="tipo_capacitación">¿Qué tipo de capacitación?</label>
+                    <textarea class="form-control" name="tipo_capacitación" id="tipo_capacitación" rows="3"></textarea>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="otras_capacitaciones">¿Requiere su personal otras capacitaciones?</label>
+                    <textarea class="form-control" name="requiere_otras_capacitaciones" id="otras_capacitaciones" rows="3"></textarea>
+                  </div>
+                </div>
+
+
+              </div>
+              <!-- /.row -->
+
+
+            </div>
+
+
+
+
+=======
         <h3 class="text-secondary font-weight-normal ml-2 ml-lg-1">
           Empresas del empresario
         </h3>
 
         <div class="col-md-12 mb-3 empresas">
           <!-- Contenido dinámico -->
+>>>>>>> a24edbd129837170bc06096b03b7f03831fe39de
 
 
            <!-- Mientras este vacio -->
@@ -357,6 +678,7 @@ require '../layouts/header.php';
 <!-- ./wrapper -->
 <?php
 require '../layouts/scripts.php';
+                            }
 ?>
 </body>
 

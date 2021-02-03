@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -66,13 +67,10 @@
       <!-- Sidebar -->
       <div class="sidebar">
 
-
-        <!-- Sidebar Menu -->
-        <nav class="mt-4">
+      <nav class="mt-4">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
             <!--Menú desplegable documentos -->
             <li class="nav-item has-treeview">
               <a href="agendasesor.php" class="nav-link">
@@ -86,8 +84,7 @@
               <a href="../asociado/carta.php" class="nav-link active">
                 <i class="nav-icon fas fa-handshake"></i>
                 <p>Asesoria
-                <i class="right fas fa-angle-left"></i>
-
+                  <i class="right fas fa-angle-left"></i>
                 </p>
               </a>
               <ul class="nav nav-treeview">
