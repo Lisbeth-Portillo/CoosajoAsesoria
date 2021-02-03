@@ -323,13 +323,14 @@ require '../layouts/header.php';
         <h3 class="text-secondary font-weight-normal ml-2 ml-lg-1">
           Empresas del empresario
         </h3>
+
         <div class="col-md-12 mb-3 empresas">
           <!-- Contenido dinámico -->
 
 
            <!-- Mientras este vacio -->
            <div class="text-center d-block mt-5 s_loader"> 
-              <h4 class="text-center font-weight-light text-secondary">Ninguna empresa agregada</h4>
+              <h4 class="text-center font-weight-light text-secondary">Sin empresas</h4>
           </div>
         </div>
 
@@ -339,7 +340,7 @@ require '../layouts/header.php';
 
             </div>
             <div class="col-md-6 align-content-center">
-              <button type="button" class="btn btn-primary float-right" id="nueva_empresa_btn" title="Agregar nueva empresa/negocio">Añadir</button>
+              <button type="button" class="btn btn-primary float-right" id="nueva_empresa_btn" title="Agregar nueva empresa/negocio">Agregar</button>
             </div>
           </div>
         </div>

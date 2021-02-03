@@ -120,15 +120,15 @@
                             </a>
                             <ul class="nav nav-treeview mb-2">
                                 <li class="nav-item">
-                                    <a href="lista_asesorias.php" class="nav-link">
+                                    <a href="resumen.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Lista de asesorías</p>
+                                        <p>Resumen</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="buscar_empresa.php" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Detalles de una empresa</p>
+                                        <p>Detalle por empresa</p>
                                     </a>
                                 </li>
                             </ul>
@@ -176,7 +176,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-12">
-                            <h1 class="text-dark ml-1 ml-lg-0">Detalles de una empresa</h1>
+                            <h1 class="text-dark ml-1 ml-lg-0">Detalle por empresa</h1>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -261,8 +261,8 @@
                                             </tr>
                                         </tbody>
                                     </table>
-
-                                    <!-- table id="tablaempresas" class="table table-bordered">
+<!-- 
+                                    <table id="tablaempresas" class="table table-bordered">
                                         <thead>
                                             <tr>
                                                 <th>Codigo</th>
@@ -368,7 +368,7 @@
         <!-- AdminLTE App -->
         <script src="../../assets/js/adminlte.min.js"></script>
         <!-- DataTables -->
-        <script src="../../assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="../../assets/plugins/datatables/jquery.dataTables.js"></script>
         <script src="../../assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
         <script src="../../assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
 

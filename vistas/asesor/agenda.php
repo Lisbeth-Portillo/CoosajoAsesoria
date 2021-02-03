@@ -7,32 +7,21 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title>CEDEC</title>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../assets/plugins/fontawesome-free/css/all.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-
-    <!-- daterange picker -->
-    <link rel="stylesheet" href="../../assets/plugins/daterangepicker/daterangepicker.css">
-    <!-- iCheck for checkboxes and radio inputs -->
-    <!-- Bootstrap Color Picker -->
-    <link rel="stylesheet" href="../../assets/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
-    <!-- Tempusdominus Bbootstrap 4 -->
-    <!-- Select2 -->
-    <link rel="stylesheet" href="../../assets/plugins/select2/css/select2.min.css">
-    <!-- Bootstrap4 Duallistbox -->
-    <link rel="stylesheet" href="../../assets/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="../../assets/css/adminlte.min.css">
-    <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-    <link rel="stylesheet" href="../../assets/css/style.css">
-
-
-
+      <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../assets/plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../assets/plugins/select2/css/select2.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../assets/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
 
@@ -65,17 +54,15 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <span class="dropdown-item dropdown-header">Opciones de cuenta</span>
-                        
+
                         <div class="dropdown-divider"></div>
 
                         <a href="#" class="dropdown-item">
-                        Configurar
+                            Configurar
                         </a>
 
-         
-
                         <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">Cerrar sesion</a>
+                        <a href="../auth/salir.php" class="dropdown-item dropdown-footer">Cerrar sesion</a>
                     </div>
                 </li>
             </ul>
@@ -115,13 +102,13 @@
                         <li class="nav-item">
                             <a href="../asociado/carta.php" class="nav-link">
                                 <i class="nav-icon fas fa-handshake"></i>
-                                <p>Asesoria
+                                <p>Asesorias
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview mb-2">
                                 <li class="nav-item">
-                                    <a href="lista_asesorias.php" class="nav-link">
+                                    <a href="resumen.php" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Resumen</p>
                                     </a>
@@ -173,12 +160,14 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
             <section class="content-header">
                 <div class="container-fluid">
+
                     <div class="row mb-2">
-                        <div class="col-sm-12">
-                            <h1 class="text-dark ml-1 ml-lg-0">Agenda</h1>
-                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <h1>Agenda</h1>
+                        </div>
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </section>
@@ -187,30 +176,263 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-                    <!-- SELECT2 EXAMPLE -->
 
-                    <!-- /.card -->
-                </div><!-- /.container-fluid -->
-            </section>
-            <!-- /.content -->
+                    <div class="card card-default">
+                        <div class="card-body">
+                            <div class="row mt-3">
+                                <div class="col-7 col-md-4 offset-md-4 d-md-flex justify-content-md-center">
+                                    <div class="form-inline ">
+                                        <label class="my-1 mr-2 form-check-label" for="fecha">Fecha: </label>
+                                        <input type="date" class="form-control" value="2021-01-04">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.row 1 campo fecha -->
+                            <div class="row mt-1">
+                                <div class="col-md-12 col-xl-8">
+                                    <div class="row px-0">
+                                        <div class="col-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <h4 class="pt-3 pb-2 text-center mt-4">Asesorias</h4>
+                                                    <tr class="table-success">
+                                                        <th scope="col">Empresario</th>
+                                                        <th scope="col">Empresa/Negocio</th>
+                                                        <th scope="col">Horario</th>
+                                                        <th scope="col">Reagendar</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" class="form-control bg-white" value="Andrea Aguilar" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control bg-white" value="Andrea Aguilar" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="time" class="form-control bg-white">
+                                                        </td>
+                                                        <td>
+                                                            <input type="date" class="form-control bg-white">
+                                                        </td>
+                                                    </tr>
 
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" class="form-control bg-white" value="Andrea Aguilar" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control bg-white" value="Andrea Aguilar" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="time" class="form-control bg-white">
+                                                        </td>
+                                                        <td>
+                                                            <input type="date" class="form-control bg-white">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" class="form-control bg-white" value="Andrea Aguilar" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control bg-white" value="Andrea Aguilar" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="time" class="form-control bg-white">
+                                                        </td>
+                                                        <td>
+                                                            <input type="date" class="form-control bg-white">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        </div>
+                                        <div class="col-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <h4 class="py-2 text-center">Microcreditos</h4>
+                                                    <tr class="table-success">
+                                                        <th scope="col">Empresario</th>
+                                                        <th scope="col">Empresa/Negocio</th>
+                                                        <th scope="col">Horario</th>
+                                                        <th scope="col">Reagendar</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" class="form-control bg-white" value="Andrea Aguilar" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control bg-white" value="Andrea Aguilar" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="time" class="form-control bg-white">
+                                                        </td>
+                                                        <td>
+                                                            <input type="date" class="form-control bg-white">
+                                                        </td>
+                                                    </tr>
 
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="buscar_asociado">
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" class="form-control bg-white" value="Andrea Aguilar" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control bg-white" value="Andrea Aguilar" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="time" class="form-control bg-white">
+                                                        </td>
+                                                        <td>
+                                                            <input type="date" class="form-control bg-white">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" class="form-control bg-white" value="Andrea Aguilar" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="text" class="form-control bg-white" value="Andrea Aguilar" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="time" class="form-control bg-white">
+                                                        </td>
+                                                        <td>
+                                                            <input type="date" class="form-control bg-white">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.col-md-7 -->
+                                <div class="col-md-12 col-xl-4">
+                                    <!-- FORMACIONES -->
+                                    <h4 class="pt-1 pb-2 text-center">Formaciones</h4>
+                                    <div class="row">
+                                        <div class="eventos_de_hoy mb-4 col-md-6 col-lg-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <h6 class="font-weight-bold border-bottom pb-2">Eventos de hoy</h6>
+                                                    </tr>
+                                                    <tr class="table-info text-center">
+                                                        <th scope="col">Evento</th>
+                                                        <th scope="col">Hora</th>
+                                                        <th scope="col">Inscritos</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+            
 
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" class="form-control bg-white" value="Nombre evento" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="time" class="form-control bg-white" value="15:30" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="number" class="form-control bg-white" value="0">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" class="form-control bg-white" value="Nombre evento" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="time" class="form-control bg-white" value="15:30" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="number" class="form-control bg-white" value="0">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" class="form-control bg-white" value="Nombre evento" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="time" class="form-control bg-white" value="15:30" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="number" class="form-control bg-white" value="0">
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" class="form-control bg-white" value="Nombre evento" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="time" class="form-control bg-white" value="15:30" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="number" class="form-control bg-white" value="0">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                            <button type="button" class="btn btn-info btn-sm ml-2">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="icon_centrado bi bi-caret-left-fill" viewBox="0 0 16 16">
+                                                    <path d="M3.86 8.753l5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"></path>
+                                                </svg>
+                                                Detalles de eventos
+                                            </button>
+                                        </div>
+                                        <div class="eventos_proximos mt-5 col-md-6 col-lg-12">
+                                        <div class="table-responsive">
+                                            <table class="table table-borderless">
+                                                <thead>
+                                                    <tr>
+                                                        <h6 class="font-weight-normal border-bottom pb-2">Eventos proximos</h6>
+                                                    </tr>
+                                                    <tr class="table-info text-center">
+                                                        <th scope="col">Evento</th>
+                                                        <th scope="col">Hora</th>
+                                                        <th scope="col">Fecha</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <input type="text" class="form-control bg-white" value="Nombre evento" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="time" class="form-control bg-white" value="15:30" readonly>
+                                                        </td>
+                                                        <td>
+                                                            <input type="date" class="form-control bg-white" value="2021-05-27">
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.col-md-7 -->
+                            </div>
+                            <!-- /.row 2 asesoria->microcreditos y formaciones -->
+
+                        </div>
+                        <!-- /.card-body -->
                     </div>
+                    <!-- /.card main  -->
                 </div>
-                <div class="col-md-8">
-
-                </div>
-            </div>
-
-
-
-
+                <!-- /.container-fluid -->
+            </section>
+            <!-- /.section content -->
         </div>
-        <!-- /.SECCION DE CONTENIDO -->
+        <!-- /.content DE CONTENIDO -->
 
 
         <script src="../../assets/plugins/jquery/jquery.min.js"></script>
@@ -237,7 +459,8 @@
         <script src="../../assets/js/demo.js"></script>
         <script src="../../assets/js/functions.js"></script>
 
-
+    </div>
+    <!-- /.wrapper -->
 </body>
 
 </html>

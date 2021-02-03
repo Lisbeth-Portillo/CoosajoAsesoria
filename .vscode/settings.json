@@ -1,0 +1,7 @@
+{
+   "editor.parameterHints.enabled": false,
+   "php.suggest.basic": false,
+   "editor.hover.enabled": false,
+   "html.hover.references": false,
+   "html.hover.documentation": false
+}

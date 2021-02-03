@@ -1,0 +1,36 @@
+.toggle-btn + label{
+    display: block;
+    width: 4em;
+    height: 2em;
+    background: #D9DADC;
+    appearance: none;
+    border-radius: 1em;
+    box-shadow: 0 0 0 1.8px #D9DADC;
+    cursor: pointer;
+}
+.toggle-btn:checked + label{
+    background: #4BD865;
+    box-shadow: 0 0 0 1.8px #4BD865;
+}
+
+.toggle-btn + label:before{
+    display: block;
+    content: "";
+    width: 2em;
+    height: 2em;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0.5px 2px #999999;
+    position: relative;
+    transition: transform 0.23s;
+    left: 0;
+}
+
+.toggle-btn:checked + label::before{
+    transform: translateX(2em);
+    box-shadow: none;
+}
+
+.toggle-btn{
+    display: none;
+}
