@@ -95,7 +95,7 @@ class Usuario
 	//Metodo para listar permisos de los usuarios
 	public function listarmarcados($id)
 	{
-		$sql = "SELECT * FROM permisosusuarios WHERE Usuarios_idUsuarios='$id'";
+		$sql = "SELECT Permisos_idPermisos FROM permisosusuarios WHERE Usuarios_idUsuarios='$id'";
 		return ejecutarConsulta($sql);
 	}
 

@@ -8,21 +8,14 @@ if (isset($_SESSION['tiempo'])) {
 
 	/**
 	 * Tiempo en segundos validos para la inactividad
-	 * 2 minutos / 120 segundos
+	 * 25 minutos / 1500 segundos
 	 */
+	$inactivo = 1500;
 
-	$inactivo = 20;
-
-	/**
-	 * Se calcula el tiempo de vida inactivo de la sesión
-	 */
-
+	// Se calcula el tiempo de vida inactivo de la sesión
 	$vida_session = time() - $_SESSION['tiempo'];
 
-	/**
-	 * Se compara si el tiempo de inactividad se cumple y si es así se cierra, y se destruye la sesión
-	 */
-
+	//Se compara si el tiempo de inactividad se cumple y si es así se cierra, y se destruye la sesión
 	if ($vida_session > $inactivo) {
 		/**
 		 * Se remueve y se destruye la sesión 

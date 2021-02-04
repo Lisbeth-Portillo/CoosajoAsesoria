@@ -146,3 +146,5 @@ function check_pass() {
         document.getElementById("pass_type").innerHTML = "";
     }
 }
+
+//Mensaje al cierre por inactividad

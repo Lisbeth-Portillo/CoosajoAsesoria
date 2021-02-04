@@ -19,32 +19,32 @@ switch ($_GET["op"]) {
 
 		if ($fetchU->Usuario > 0) {
 			echo '2';
-		}else{
+		} else {
 			$clavehash = hash("SHA256", $Pass);
 			$estado = 0;
 			$permisonAsoc = 7;
 			$rol = 3;
-			$respta = $usuario->insertar($Usuario, $clavehash, $estado , $Correo, $rol, $permisonAsoc);
+			$respta = $usuario->insertar($Usuario, $clavehash, $estado, $Correo, $rol, $permisonAsoc);
 
 			$id = $usuario->obtenerid($Usuario, $clavehash, $Correo);
-			$idU=$id->fetch_object();
+			$idU = $id->fetch_object();
 
 			$_SESSION['active'] = true;
 			$_SESSION['idUsuarios'] = $idU->idUsuarios;
 			$_SESSION['Usuario'] = $idU->Usuario;
-			$_SESSION['Estado'] = $idU->Estado ;
+			$_SESSION['Estado'] = $idU->Estado;
 			$_SESSION['Correo'] = $idU->Correo;
 			$_SESSION['Rol_idRol'] = $idU->Rol_idRol;
 
-			$marcados=$usuario->listarmarcados($idU->idUsuarios);
+			$marcados = $usuario->listarmarcados($idU->idUsuarios);
 
-		//declaramos el array para almacenar todos los permisos
-		$valores=array();
+			//declaramos el array para almacenar todos los permisos
+			$valores = array();
 
-		//almacenamos los permisos marcados en al array
-		while ($per = $marcados->fetch_object()) {
-			array_push($valores, $per->Permisos_idPermisos);
-		} 
+			//almacenamos los permisos marcados en al array
+			while ($per = $marcados->fetch_object()) {
+				array_push($valores, $per->Permisos_idPermisos);
+			}
 			//Accesos del usuario
 			//Acceso al módulo de Asesoria, edición de documentos e informes
 			in_array(1, $valores) ? $_SESSION['Asesoria'] = 1 : $_SESSION['Asesoria'] = 0;
@@ -63,8 +63,6 @@ switch ($_GET["op"]) {
 
 			echo '1';
 		}
-		
-		
 		break;
 
 	case 'guardaryeditar':
@@ -188,16 +186,15 @@ switch ($_GET["op"]) {
 			//Acceso al módulo de Formación, crear, editar, eliminar, informes
 			in_array(3, $valores) ? $_SESSION['FormacionAse'] = 1 : $_SESSION['FormacionAse'] = 0;
 			//Acceso al formulario de inscripción, datos del evento
-			in_array(3, $valores) ? $_SESSION['FormacionAso'] = 1 : $_SESSION['FormacionAso'] = 0;
+			in_array(4, $valores) ? $_SESSION['FormacionAso'] = 1 : $_SESSION['FormacionAso'] = 0;
 			//Impresión de documentos, eliminación de datos
-			in_array(4, $valores) ? $_SESSION['Impresión'] = 1 : $_SESSION['Impresión'] = 0;
+			in_array(5, $valores) ? $_SESSION['Impresión'] = 1 : $_SESSION['Impresión'] = 0;
 			//Acceso a usuarios, contraseñas, edición de metas.
-			in_array(5, $valores) ? $_SESSION['Jefe'] = 1 : $_SESSION['Jefe'] = 0;
+			in_array(6, $valores) ? $_SESSION['Jefe'] = 1 : $_SESSION['Jefe'] = 0;
 			//Acceso a la linea base, carta de compromiso, diagnostico
-			in_array(6, $valores) ? $_SESSION['AsesoriaAso'] = 1 : $_SESSION['AsesoriaAso'] = 0;
+			in_array(7, $valores) ? $_SESSION['AsesoriaAso'] = 1 : $_SESSION['AsesoriaAso'] = 0;
 			echo $_SESSION['Rol_idRol'];
-
-		}else{
+		} else {
 			echo '4';
 		}
 

@@ -1,14 +1,9 @@
 <?php
-/*
-if (!isset($_SESSION['Rol_idRol'])) {
-  header("Location: vistas/asociado");
-
-}else{*/
-  ?>
+?>
 <!DOCTYPE html>
 <html lang="es">
 
-<head> -
+<head> 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CEDEC</title>
@@ -95,10 +90,10 @@ if (!isset($_SESSION['Rol_idRol'])) {
                 </div>
                 <input type="password" name="Pass" id="Pass" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="basic-addon1" autocomplete="off">
                 <span class="input-group-addon">
-                <div id="meter_wrapper">
-                <span id="pass_type"> </span>
-                <div id="meter"> </div>
-                </div>
+                  <div id="meter_wrapper">
+                    <span id="pass_type"> </span>
+                    <div id="meter"> </div>
+                  </div>
                 </span>
               </div>
           </div>
