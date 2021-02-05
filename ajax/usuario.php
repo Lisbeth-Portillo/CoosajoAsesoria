@@ -154,7 +154,7 @@ switch ($_GET["op"]) {
 		//Hash SHA256 en la contraseña
 		$clavehash = hash("SHA256", $password);
 
-
+		
 		$rspta = $usuario->verificar($usuarioo, $clavehash);
 
 		$fetch = $rspta->fetch_object();

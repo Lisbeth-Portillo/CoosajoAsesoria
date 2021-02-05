@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<head> 
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CEDEC</title>
@@ -96,9 +96,15 @@
                   </div>
                 </span>
               </div>
+
+
+              <h6 class="text-center" style="font-size:15px;text-align: center;color: black;text-shadow: -1px -1px 1px white, 1px 1px 1px white, -1px 1px 1px white, 1px -1px 1px white;">Al hacer clic en "Registrarte", acepta nuestros términos y condiciones de uso y políticas de privacidad
+                <a style="text-shadow:none;" href="vistas/auth/condiciones.php">Leer términos y condiciones</a>
+              </h6>
+
           </div>
           <div class="text-center">
-            <button type="submit" class="btn btn-primary btn-lg mt-3 mb-3">Registrarse</button>
+            <button type="submit" class="btn btn-primary btn-lg mt-3 mb-3">Registrarte</button>
           </div>
           </form>
         </div>
